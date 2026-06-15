@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Huiying Materials 暉盈材料網站視覺提案">
+  <title data-en="Huiying Materials | Website Concepts" data-zh="暉盈材料｜網站視覺提案">Huiying Materials | Website Concepts</title>
+  <style>
+    :root {
+      --ink: #15201d;
+      --muted: #66716d;
+      --paper: #f4f2ec;
+      --line: #d9d6cd;
+      --accent: #245e50;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(21, 32, 29, .045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(21, 32, 29, .045) 1px, transparent 1px),
+        var(--paper);
+      background-size: 42px 42px;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+    }
+
+    a { color: inherit; }
+
+    .language-switch {
+      position: absolute;
+      top: 28px;
+      right: max(20px, calc((100vw - 1180px) / 2));
+      display: flex;
+      gap: 4px;
+    }
+
+    .language-switch button {
+      padding: 8px 11px;
+      border: 0;
+      border-radius: 999px;
+      color: var(--muted);
+      background: transparent;
+      font: inherit;
+      font-size: 11px;
+      cursor: pointer;
+    }
+
+    .language-switch button.active { background: var(--accent); color: #fff; }
+
+    .shell {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      min-height: 46vh;
+      display: grid;
+      align-items: end;
+      padding: 42px 0 64px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 42px;
+      height: 2px;
+      background: currentColor;
+      content: "";
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(42px, 8vw, 100px);
+      font-weight: 600;
+      letter-spacing: -.055em;
+      line-height: .95;
+    }
+
+    .lead {
+      max-width: 680px;
+      margin: 30px 0 0;
+      color: var(--muted);
+      font-size: clamp(16px, 2vw, 20px);
+      line-height: 1.8;
+    }
+
+    .proposals {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      padding-bottom: 72px;
+    }
+
+    .card {
+      position: relative;
+      min-height: 480px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #fff;
+      box-shadow: 0 18px 50px rgba(26, 34, 31, .06);
+      text-decoration: none;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 26px 64px rgba(26, 34, 31, .12);
+    }
+
+    .preview {
+      height: 255px;
+      border-bottom: 1px solid rgba(0, 0, 0, .1);
+    }
+
+    .minimal {
+      position: relative;
+      background: #f6f4ed;
+    }
+
+    .minimal::before {
+      position: absolute;
+      inset: 35px 32px;
+      border: 1px solid #1d493e;
+      content: "";
+    }
+
+    .minimal::after {
+      position: absolute;
+      top: 35px;
+      right: 32px;
+      width: 44%;
+      height: 74%;
+      background: #1d493e;
+      content: "";
+    }
+
+    .industrial {
+      position: relative;
+      background:
+        linear-gradient(rgba(255, 255, 255, .06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .06) 1px, transparent 1px),
+        #151918;
+      background-size: 28px 28px;
+    }
+
+    .industrial::before {
+      position: absolute;
+      top: 42px;
+      left: 32px;
+      width: 54%;
+      height: 92px;
+      border-top: 8px solid #ef6a35;
+      border-bottom: 1px solid #59605e;
+      content: "";
+    }
+
+    .industrial::after {
+      position: absolute;
+      right: -20px;
+      bottom: 28px;
+      width: 72%;
+      height: 90px;
+      border: 1px solid #818785;
+      transform: skewX(-18deg);
+      content: "";
+    }
+
+    .warm {
+      position: relative;
+      background: #dccdb9;
+    }
+
+    .warm::before {
+      position: absolute;
+      top: -55px;
+      right: -20px;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background: #a85035;
+      content: "";
+    }
+
+    .warm::after {
+      position: absolute;
+      left: 38px;
+      bottom: 33px;
+      width: 70%;
+      height: 105px;
+      border-radius: 80px 80px 4px 4px;
+      background: #273b35;
+      content: "";
+    }
+
+    .card-content { padding: 28px; }
+
+    .number {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .16em;
+    }
+
+    h2 {
+      margin: 12px 0 8px;
+      font-size: 26px;
+      letter-spacing: -.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .open {
+      position: absolute;
+      right: 24px;
+      bottom: 22px;
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      font-size: 20px;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 26px 0 36px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 850px) {
+      header { min-height: auto; padding-top: 90px; }
+      .proposals { grid-template-columns: 1fr; }
+      .card { min-height: 430px; }
+      footer { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="language-switch" aria-label="Language">
+    <button class="active" type="button" data-lang-button="en">EN</button>
+    <button type="button" data-lang-button="zh">中文</button>
+  </div>
+  <header>
+    <div class="shell">
+      <div class="eyebrow">Huiying Materials / Website Direction</div>
+      <h1 data-en-html="Huiying Materials<br>Website Concepts" data-zh-html="暉盈材料<br>網站視覺提案">Huiying Materials<br>Website Concepts</h1>
+      <p class="lead" data-en="Three one-page website directions for reviewing the brand mood, layout and preferred visual style." data-zh="以下提供三種一頁式首頁方向。內容目前皆為示意，重點是先確認品牌氣質、版面節奏與喜歡的視覺方向。">Three one-page website directions for reviewing the brand mood, layout and preferred visual style.</p>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section class="proposals" aria-label="網站提案">
+      <a class="card" href="concept-a.html">
+        <div class="preview minimal"></div>
+        <div class="card-content">
+          <span class="number">DIRECTION 01</span>
+          <h2 data-en="Architectural Minimal" data-zh="極簡建築感">Architectural Minimal</h2>
+          <p data-en="Generous space, a precise grid and deep green create a refined, professional identity." data-zh="留白、俐落網格與深綠色。適合希望呈現品質、設計感與專業度的品牌。">Generous space, a precise grid and deep green create a refined, professional identity.</p>
+        </div>
+        <span class="open" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="card" href="concept-b.html">
+        <div class="preview industrial"></div>
+        <div class="card-content">
+          <span class="number">DIRECTION 02</span>
+          <h2 data-en="Industrial Professional" data-zh="專業工程感">Industrial Professional</h2>
+          <p data-en="Dark tones, high contrast and technical lines emphasize capability, efficiency and trust." data-zh="深色、高對比與技術線條。強調供應能力、效率，以及值得信賴的工程形象。">Dark tones, high contrast and technical lines emphasize capability, efficiency and trust.</p>
+        </div>
+        <span class="open" aria-hidden="true">↗</span>
+      </a>
+
+      <a class="card" href="concept-c.html">
+        <div class="preview warm"></div>
+        <div class="card-content">
+          <span class="number">DIRECTION 03</span>
+          <h2 data-en="Warm and Natural" data-zh="溫暖自然感">Warm and Natural</h2>
+          <p data-en="Earth tones, soft curves and approachable language highlight lasting partnerships." data-zh="大地色、圓弧與親切文案。適合希望降低距離感、凸顯長期合作關係的品牌。">Earth tones, soft curves and approachable language highlight lasting partnerships.</p>
+        </div>
+        <span class="open" aria-hidden="true">↗</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="shell">
+    <span>HUIYING MATERIALS · INITIAL WEBSITE CONCEPT</span>
+    <span data-en="All concepts are static one-page websites" data-zh="三款皆為純靜態單頁網站">All concepts are static one-page websites</span>
+  </footer>
+  <script src="language.js"></script>
+</body>
+</html>

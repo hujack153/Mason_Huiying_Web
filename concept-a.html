@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="暉盈材料，一站式建築材料供應與選材服務。">
+  <title data-en="Huiying Materials | Architectural Minimal" data-zh="暉盈材料｜極簡建築感提案">Huiying Materials | Architectural Minimal</title>
+  <style>
+    :root {
+      --ink: #17231f;
+      --green: #1f5548;
+      --paper: #f3f1ea;
+      --white: #fbfaf6;
+      --line: #d8d6ce;
+      --muted: #66716d;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, transparent calc(50% - .5px), rgba(31, 85, 72, .045) 50%, transparent calc(50% + .5px)),
+        var(--paper);
+      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1200px, calc(100% - 48px)); margin: 0 auto; }
+
+    nav {
+      position: fixed;
+      z-index: 5;
+      top: 0;
+      left: 0;
+      width: 100%;
+      border-bottom: 1px solid rgba(23, 35, 31, .16);
+      background: rgba(243, 241, 234, .84);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav-inner {
+      display: flex;
+      min-height: 82px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand { font-size: 19px; font-weight: 800; letter-spacing: .08em; }
+    .brand small { display: block; margin-top: 2px; font-size: 9px; font-weight: 600; letter-spacing: .22em; }
+    .links { display: flex; gap: 32px; font-size: 14px; }
+    .links a { position: relative; padding: 30px 0; }
+    .links a::after { position: absolute; right: 0; bottom: 22px; left: 0; height: 1px; background: var(--green); transform: scaleX(0); transform-origin: right; transition: transform .25s ease; content: ""; }
+    .links a:hover { color: var(--green); }
+    .links a:hover::after { transform: scaleX(1); transform-origin: left; }
+
+    .language-switch { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+    .language-switch button {
+      padding: 7px 9px;
+      border: 0;
+      border-radius: 999px;
+      color: var(--muted);
+      background: transparent;
+      font: inherit;
+      font-size: 11px;
+      cursor: pointer;
+    }
+    .language-switch button.active { background: var(--green); color: #fff; }
+
+    .hero {
+      min-height: 760px;
+      display: grid;
+      grid-template-columns: 1.18fr .82fr;
+      padding-top: 82px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 86px max(36px, 7vw) 76px max(24px, calc((100vw - 1200px) / 2));
+    }
+
+    .kicker {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .22em;
+    }
+
+    .kicker::before { width: 34px; height: 2px; background: currentColor; content: ""; }
+
+    h1 {
+      max-width: 720px;
+      margin: 0;
+      font-size: clamp(52px, 7.2vw, 104px);
+      font-weight: 600;
+      letter-spacing: -.065em;
+      line-height: .98;
+    }
+
+    .hero-copy p {
+      max-width: 570px;
+      margin: 32px 0 40px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.9;
+    }
+
+    .button {
+      display: inline-flex;
+      width: fit-content;
+      min-height: 52px;
+      align-items: center;
+      gap: 36px;
+      padding: 0 22px;
+      background: var(--green);
+      color: #fff;
+      font-size: 14px;
+      box-shadow: 0 10px 24px rgba(31, 85, 72, .14);
+      transition: gap .2s ease, background .2s ease, transform .2s ease, box-shadow .2s ease;
+    }
+
+    .button:hover { gap: 48px; background: #173f36; transform: translateY(-2px); box-shadow: 0 16px 32px rgba(31, 85, 72, .2); }
+
+    .hero-art {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(255, 255, 255, .08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .08) 1px, transparent 1px),
+        var(--green);
+      background-size: 68px 68px;
+    }
+
+    .hero-art::before {
+      position: absolute;
+      right: -14%;
+      bottom: -12%;
+      width: 84%;
+      height: 70%;
+      border: 1px solid rgba(255, 255, 255, .6);
+      background: rgba(255, 255, 255, .08);
+      transform: rotate(-9deg);
+      content: "";
+    }
+
+    .hero-art::after {
+      position: absolute;
+      top: 19%;
+      left: 18%;
+      width: 44%;
+      height: 56%;
+      border: 1px solid rgba(255, 255, 255, .68);
+      content: "";
+    }
+
+    .art-core {
+      position: absolute;
+      z-index: 1;
+      top: 29%;
+      left: 27%;
+      width: 46%;
+      height: 43%;
+      border: 1px solid rgba(255, 255, 255, .88);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.19), transparent 58%),
+        rgba(8, 45, 37, .24);
+      box-shadow: 24px 26px 0 rgba(8, 45, 37, .19);
+    }
+
+    .art-core::before {
+      position: absolute;
+      top: -46px;
+      left: -46px;
+      width: 92px;
+      height: 92px;
+      border-top: 1px solid rgba(255, 255, 255, .65);
+      border-left: 1px solid rgba(255, 255, 255, .65);
+      content: "";
+    }
+
+    .art-core::after {
+      position: absolute;
+      right: -34px;
+      bottom: -34px;
+      width: 68px;
+      height: 68px;
+      border-right: 1px solid rgba(255, 255, 255, .65);
+      border-bottom: 1px solid rgba(255, 255, 255, .65);
+      content: "";
+    }
+
+    .dimension {
+      position: absolute;
+      z-index: 2;
+      color: rgba(255, 255, 255, .64);
+      font-size: 9px;
+      letter-spacing: .18em;
+    }
+    .dimension.top { top: 22px; left: 24px; }
+    .dimension.bottom { right: 24px; bottom: 22px; }
+
+    .art-label {
+      position: absolute;
+      z-index: 1;
+      right: 36px;
+      bottom: 34px;
+      color: rgba(255, 255, 255, .76);
+      font-size: 11px;
+      letter-spacing: .2em;
+      writing-mode: vertical-rl;
+    }
+
+    section { padding: 110px 0; }
+    .proof {
+      padding: 0;
+      border-bottom: 1px solid var(--line);
+      background: rgba(251, 250, 246, .62);
+    }
+    .proof-grid { display: grid; grid-template-columns: 1.25fr repeat(3, 1fr); }
+    .proof-item { min-height: 132px; display: flex; flex-direction: column; justify-content: center; padding: 24px 30px; border-right: 1px solid var(--line); }
+    .proof-item:first-child { padding-left: 0; }
+    .proof-item:last-child { border-right: 0; }
+    .proof-item strong { font-size: clamp(24px, 3vw, 40px); font-weight: 500; letter-spacing: -.04em; }
+    .proof-item span { margin-top: 8px; color: var(--muted); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+    .proof-intro { color: var(--green); font-size: 12px; font-weight: 700; letter-spacing: .16em; line-height: 1.7; }
+    .section-head { display: grid; grid-template-columns: .8fr 1.2fr; gap: 40px; margin-bottom: 56px; }
+    .index { color: var(--green); font-size: 12px; letter-spacing: .18em; }
+
+    h2 {
+      max-width: 750px;
+      margin: 0;
+      font-size: clamp(34px, 5vw, 64px);
+      font-weight: 550;
+      letter-spacing: -.04em;
+      line-height: 1.18;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .product {
+      position: relative;
+      min-height: 390px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 26px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(23, 35, 31, 0);
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+    }
+
+    .product::before { position: absolute; top: 0; right: 0; width: 42px; height: 42px; border-left: 1px solid var(--line); border-bottom: 1px solid var(--line); content: ""; }
+    .product:hover { transform: translateY(-7px); border-color: #b8c2bd; box-shadow: 0 22px 44px rgba(23, 35, 31, .08); }
+    .product-number { color: var(--muted); font-size: 11px; letter-spacing: .16em; }
+
+    .placeholder {
+      position: relative;
+      height: 190px;
+      overflow: hidden;
+      border: 1px solid #d3d4cc;
+      background: #e9e8e1;
+    }
+
+    .placeholder::before { position: absolute; inset: 13%; border: 1px solid rgba(31, 85, 72, .34); content: ""; transition: transform .35s ease; }
+    .product:hover .placeholder::before { transform: scale(.92); }
+    .product:nth-child(1) .placeholder { background: repeating-linear-gradient(112deg, #e7e6df 0 16px, #dcddd6 16px 17px); }
+    .product:nth-child(1) .placeholder::before { border-radius: 50% 50% 4px 4px; }
+    .product:nth-child(2) .placeholder { background: linear-gradient(135deg, #d9ded9 25%, #ecebe5 25% 50%, #dfe2dc 50% 75%, #ecebe5 75%); background-size: 42px 42px; }
+    .product:nth-child(2) .placeholder::before { transform: rotate(8deg); }
+    .product:nth-child(2):hover .placeholder::before { transform: rotate(0) scale(.92); }
+    .product:nth-child(3) .placeholder { background: radial-gradient(circle at 22% 30%, rgba(31,85,72,.13) 0 2px, transparent 3px), radial-gradient(circle at 72% 65%, rgba(31,85,72,.1) 0 3px, transparent 4px), #e7e5de; background-size: 34px 34px, 46px 46px; }
+
+    .placeholder::after {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: #92978f;
+      font-size: 11px;
+      letter-spacing: .14em;
+      content: "MATERIAL / 0" attr(data-index);
+    }
+
+    .product h3 { margin: 24px 0 8px; font-size: 22px; }
+    .product p { margin: 0; color: var(--muted); line-height: 1.7; }
+
+    .about { background: var(--ink); color: #fff; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10vw; align-items: end; }
+    .about p { margin: 0; color: #b8c0bd; font-size: 17px; line-height: 2; }
+    .values { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 64px; border-top: 1px solid #45504c; }
+    .value { padding: 28px 28px 0 0; border-right: 1px solid #45504c; }
+    .value:last-child { border-right: 0; padding-left: 28px; }
+    .value:nth-child(2) { padding-left: 28px; }
+    .value b { display: block; margin-bottom: 12px; font-size: 20px; }
+    .value span { color: #a9b2af; font-size: 14px; line-height: 1.7; }
+    .about-note { display: flex; align-items: center; gap: 18px; margin-top: 72px; padding-top: 24px; border-top: 1px solid #45504c; color: #7f8c87; font-size: 10px; letter-spacing: .2em; }
+    .about-note::before { width: 8px; height: 8px; border: 1px solid #7f8c87; content: ""; }
+
+    .contact { text-align: center; }
+    .contact h2 { margin: 0 auto 28px; }
+    .contact p { margin-bottom: 36px; color: var(--muted); }
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .proposal-switch {
+      position: fixed;
+      z-index: 20;
+      right: 18px;
+      bottom: 18px;
+      display: flex;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: rgba(251, 250, 246, .94);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, .08);
+      backdrop-filter: blur(10px);
+    }
+
+    .proposal-switch a { padding: 11px 13px; border-right: 1px solid var(--line); font-size: 11px; }
+    .proposal-switch a:last-child { border-right: 0; }
+    .proposal-switch .active { background: var(--green); color: #fff; }
+
+    @media (max-width: 800px) {
+      .wrap { width: min(100% - 32px, 1200px); }
+      .links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-copy { min-height: 640px; padding: 100px 24px 70px; }
+      .hero-art { min-height: 400px; }
+      .proof-grid { grid-template-columns: 1fr 1fr; }
+      .proof-item, .proof-item:first-child { min-height: 110px; padding: 22px 16px; border-bottom: 1px solid var(--line); }
+      .proof-item:nth-child(2) { border-right: 0; }
+      .section-head, .about-grid { grid-template-columns: 1fr; }
+      .products, .values { grid-template-columns: 1fr; }
+      .value, .value:nth-child(2), .value:last-child { padding: 24px 0; border-right: 0; border-bottom: 1px solid #45504c; }
+      section { padding: 78px 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner wrap">
+      <a class="brand" href="#top">HUIYING<small>MATERIALS</small></a>
+      <div class="links">
+        <a href="#products" data-en="Products" data-zh="產品系列">Products</a>
+        <a href="#about" data-en="About" data-zh="關於我們">About</a>
+        <a href="#contact" data-en="Contact" data-zh="聯絡我們">Contact</a>
+      </div>
+      <div class="language-switch" aria-label="Language">
+        <button class="active" type="button" data-lang-button="en">EN</button>
+        <button type="button" data-lang-button="zh">中文</button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="kicker">BUILD WITH CONFIDENCE</div>
+        <h1 data-en-html="Better materials.<br>Better buildings." data-zh-html="好材料，<br>成就好建築。">Better materials.<br>Better buildings.</h1>
+        <p data-en="From material selection to reliable supply, Huiying Materials supports every project with professional, efficient and dependable service." data-zh="從選材建議到穩定供應，暉盈材料以專業、效率與可靠服務，陪伴每一個工程從規劃走到完成。">From material selection to reliable supply, Huiying Materials supports every project with professional, efficient and dependable service.</p>
+        <a class="button" href="#products"><span data-en="Explore products" data-zh="探索產品系列">Explore products</span> <span>→</span></a>
+      </div>
+      <div class="hero-art" aria-label="建築幾何意象">
+        <span class="dimension top">AXIS 01 / 24°</span>
+        <div class="art-core"></div>
+        <span class="art-label">MATERIAL · QUALITY · TRUST</span>
+        <span class="dimension bottom">HYM / STRUCTURE</span>
+      </div>
+    </section>
+
+    <section class="proof" aria-label="Company capabilities">
+      <div class="proof-grid wrap">
+        <div class="proof-item proof-intro" data-en-html="BUILT FOR<br>REAL PROJECTS" data-zh-html="專注真實工程<br>所需的材料服務">BUILT FOR<br>REAL PROJECTS</div>
+        <div class="proof-item"><strong>01</strong><span data-en="Material selection" data-zh="材料選擇">Material selection</span></div>
+        <div class="proof-item"><strong>02</strong><span data-en="Reliable supply" data-zh="穩定供應">Reliable supply</span></div>
+        <div class="proof-item"><strong>03</strong><span data-en="Project support" data-zh="工程支援">Project support</span></div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="index">01 / PRODUCTS</span>
+          <h2 data-en="The right material choices for every project requirement." data-zh="因應不同工程需求，提供合適的材料選擇。">The right material choices for every project requirement.</h2>
+        </div>
+        <div class="products">
+          <article class="product">
+            <span class="product-number">CATEGORY 01</span>
+            <div>
+              <div class="placeholder" data-index="1"></div>
+              <h3 data-en="Product Category" data-zh="產品系列名稱">Product Category</h3>
+              <p data-en="Product description and applications to be added." data-zh="產品說明與適用範圍待補。">Product description and applications to be added.</p>
+            </div>
+          </article>
+          <article class="product">
+            <span class="product-number">CATEGORY 02</span>
+            <div>
+              <div class="placeholder" data-index="2"></div>
+              <h3 data-en="Product Category" data-zh="產品系列名稱">Product Category</h3>
+              <p data-en="Product description and applications to be added." data-zh="產品說明與適用範圍待補。">Product description and applications to be added.</p>
+            </div>
+          </article>
+          <article class="product">
+            <span class="product-number">CATEGORY 03</span>
+            <div>
+              <div class="placeholder" data-index="3"></div>
+              <h3 data-en="Product Category" data-zh="產品系列名稱">Product Category</h3>
+              <p data-en="Product description and applications to be added." data-zh="產品說明與適用範圍待補。">Product description and applications to be added.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap">
+        <div class="about-grid">
+          <div>
+            <span class="index">02 / ABOUT</span>
+            <h2 data-en="More than materials. We care about every project detail." data-zh="不只供應材料，也在意工程的每個細節。">More than materials. We care about every project detail.</h2>
+          </div>
+          <p data-en="Huiying Materials specializes in construction material supply and selection support. With clear product information, reliable delivery and practical advice, we help clients find the right solution." data-zh="暉盈材料專注於建築材料供應與選材服務。我們了解工程現場對品質、時程與溝通的要求，因此以清楚的產品資訊、穩定的供應流程及務實的建議，協助客戶找到合適解決方案。">Huiying Materials specializes in construction material supply and selection support. With clear product information, reliable delivery and practical advice, we help clients find the right solution.</p>
+        </div>
+        <div class="values">
+          <div class="value"><b data-en="Quality First" data-zh="品質把關">Quality First</b><span data-en="We focus on material quality and suitability." data-zh="重視材料品質與適用性，讓每次選擇更安心。">We focus on material quality and suitability.</span></div>
+          <div class="value"><b data-en="Responsive Service" data-zh="快速回應">Responsive Service</b><span data-en="Clear and efficient communication that keeps pace with your project." data-zh="掌握工程節奏，提供清楚有效率的溝通服務。">Clear and efficient communication that keeps pace with your project.</span></div>
+          <div class="value"><b data-en="Long-term Partnership" data-zh="長期合作">Long-term Partnership</b><span data-en="Reliable relationships built on trust and integrity." data-zh="以誠信為基礎，建立穩定可靠的合作關係。">Reliable relationships built on trust and integrity.</span></div>
+        </div>
+        <div class="about-note">HUIYING MATERIALS / MATERIAL · QUALITY · TRUST / TAIWAN</div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <span class="index">03 / CONTACT</span>
+        <h2 data-en="Looking for the right construction materials?" data-zh="正在尋找適合的建築材料？">Looking for the right construction materials?</h2>
+        <p data-en="Contact us to discuss your project requirements." data-zh="歡迎與我們聯繫，讓我們進一步了解您的工程需求。">Contact us to discuss your project requirements.</p>
+        <a class="button" href="javascript:void(0)"><span data-en="Contact details coming soon" data-zh="聯絡資訊待補">Contact details coming soon</span> <span>→</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">© 2026 HUIYING MATERIALS. ALL RIGHTS RESERVED.</div></footer>
+
+  <div class="proposal-switch" aria-label="切換設計提案">
+    <a href="index.html" data-en="Overview" data-zh="總覽">Overview</a>
+    <a class="active" href="concept-a.html">A</a>
+    <a href="concept-b.html">B</a>
+    <a href="concept-c.html">C</a>
+  </div>
+  <script src="language.js"></script>
+</body>
+</html>
