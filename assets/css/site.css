@@ -147,7 +147,7 @@ nav.main a.cta:hover { background: #16334c; color: #fff; }
   color: #d9c3a8; font-weight: 700; margin-bottom: 20px;
 }
 .hero .eyebrow::before { content: ""; width: 34px; height: 1px; background: #b4763a; }
-.hero h1 { font-size: clamp(32px, 5vw, 52px); max-width: 17ch; margin-bottom: 20px; }
+.hero h1 { font-size: clamp(32px, 5vw, 52px); max-width: 24ch; margin-bottom: 20px; white-space: nowrap; }
 .hero p { max-width: 54ch; color: #d5dbe0; font-size: 17px; margin: 0 0 32px; }
 
 .btn {
@@ -418,4 +418,5 @@ footer.site .fine { padding-top: 22px; display: flex; justify-content: space-bet
   .search { margin-left: 0; width: 100%; }
   footer.site .cols { grid-template-columns: 1fr; }
   .topbar { font-size: 12px; }
+  .hero h1 { max-width: 17ch; white-space: normal; }
 }
