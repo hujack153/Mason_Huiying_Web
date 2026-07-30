@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>防水材料｜暉盈國際事業有限公司</title>
+<meta name="description" content="建築防水材料七大系列：防水底漆、複合式防水、面漆、彈性水泥、止水與滲透結晶、透明保護漆與油性 PU 防水系統。">
+<link rel="icon" href="assets/img/brand/logo-ink-sm.png">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+<div class="demo-flag">本頁為網站示範版（Demo）— 規格數值為參考範圍，實際請以出貨資料為準</div>
+
+<div class="topbar">
+  <div class="wrap">
+    <div><span>02-8521-9356</span><span>huiying1215888@gmail.com</span></div>
+    <div>新北市新莊區榮華路二段 67 號 5F</div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="mark" src="assets/img/brand/logo-ink.png" alt="Huiying materials">
+      <span class="name">暉盈國際事業有限公司<small>Huiying Int'l Business Co.</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="開啟選單">選單</button>
+    <nav class="main" id="mainNav">
+      <a href="index.html">首頁</a>
+      <a href="waterproofing.html" class="active">防水材料</a>
+      <a href="stone.html">外牆仿石塗料</a>
+      <a href="about.html">關於暉盈</a>
+      <a href="contact.html" class="cta">詢價與洽詢</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <img class="bg" src="assets/img/photo/hero-4.jpg" alt="防水工程">
+  <div class="wrap" style="padding:64px 0 56px">
+    <div class="eyebrow">Waterproofing Materials</div>
+    <h1 style="font-size:clamp(28px,4vw,42px)">建築防水材料</h1>
+    <p style="margin-bottom:0">七大系列。從素地封閉、主防水層、彈性水泥到面漆保護與 PU 系統，依部位與基材選出完整配套。</p>
+  </div>
+</div>
+
+<section style="padding-top:40px">
+  <div class="wrap">
+
+    <div class="note" style="margin-bottom:30px">
+      <b>怎麼選？</b>一套完整的防水工程通常是「<b>底漆 → 主防水層 → 面漆</b>」三層。先用<b>防水底漆</b>封閉素地並強化接著，再依部位選<b>複合式防水</b>或<b>彈性水泥</b>作為主防水層，最後以<b>面漆</b>或<b>透明保護漆</b>抗紫外線與污染。既有的滲漏與裂縫，則使用<b>止水與滲透結晶</b>系列先行處理。
+    </div>
+
+    <div class="jump" id="jump"></div>
+    <div class="series" id="series"></div>
+
+  </div>
+</section>
+
+<section class="tight ink">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <div>
+      <h2 style="font-size:26px;margin-bottom:6px;color:#fff">不確定該用哪一種材料？</h2>
+      <p style="color:#9aa5ac;margin:0">告訴我們部位、基材與面積，我們回覆完整配套建議。</p>
+    </div>
+    <a class="btn btn-primary" href="contact.html">詢問配套 →</a>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <img class="flogo" src="assets/img/brand/logo-white.png" alt="Huiying materials">
+        <p style="margin:0">暉盈國際事業有限公司<br>Huiying Int'l Business Co.<br>統一編號 95431021</p>
+      </div>
+      <div>
+        <h4>產品</h4>
+        <ul>
+          <li><a href="waterproofing.html">防水材料</a></li>
+          <li><a href="stone.html">外牆仿石塗料</a></li>
+          <li><a href="about.html#epoxy">環氧樹脂地坪</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>資訊</h4>
+        <ul>
+          <li><a href="about.html">關於暉盈</a></li>
+          <li><a href="contact.html">聯絡與詢價</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>聯絡我們</h4>
+        <ul>
+          <li>電話 02-8521-9356／02-8521-9359</li>
+          <li><a href="mailto:huiying1215888@gmail.com">huiying1215888@gmail.com</a></li>
+          <li>24253 新北市新莊區榮華路二段 67 號 5F</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">
+      <span>© 2026 暉盈國際事業有限公司</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/products.js"></script>
+<script>
+(function () {
+  function esc(t) {
+    return String(t).replace(/[&<>"]/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c];
+    });
+  }
+
+  document.getElementById('jump').innerHTML = SERIES.map(function (s) {
+    return '<a href="#' + s.id + '">' + esc(s.name) + '</a>';
+  }).join('');
+
+  document.getElementById('series').innerHTML = SERIES.map(function (s, i) {
+    var feats = s.feat.map(function (f) { return '<li>' + esc(f) + '</li>'; }).join('');
+    var specs = s.spec.map(function (p) {
+      return '<span class="spec">' + esc(p[0]) + '：<b>' + esc(p[1]) + '</b></span>';
+    }).join('');
+    return '<article class="series-block" id="' + s.id + '">' +
+      '<header>' +
+        '<h3>' + esc(s.name) + '</h3>' +
+        '<span class="tagline">' + esc(s.tagline) + '</span>' +
+        '<span class="no">0' + (i + 1) + ' / 0' + SERIES.length + '</span>' +
+      '</header>' +
+      '<p>' + esc(s.desc) + '</p>' +
+      '<div class="series-cols">' +
+        '<div><h5>產品特性</h5><ul class="p-feat" style="margin:0">' + feats + '</ul></div>' +
+        '<div><h5>適用部位</h5><p style="margin:0 0 16px;color:var(--ink-2);font-size:14.5px">' + esc(s.use) + '</p>' +
+        '<h5>參考規格</h5><div class="p-specs" style="margin:0">' + specs + '</div></div>' +
+      '</div>' +
+    '</article>';
+  }).join('');
+})();
+</script>
+</body>
+</html>

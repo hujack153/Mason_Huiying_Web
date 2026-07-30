@@ -1,316 +1,209 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hant-TW">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Huiying Materials 暉盈材料網站視覺提案">
-  <title data-en="Huiying Materials | Website Concepts" data-zh="暉盈材料｜網站視覺提案">Huiying Materials | Website Concepts</title>
-  <style>
-    :root {
-      --ink: #15201d;
-      --muted: #66716d;
-      --paper: #f4f2ec;
-      --line: #d9d6cd;
-      --accent: #245e50;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      color: var(--ink);
-      background:
-        linear-gradient(rgba(21, 32, 29, .045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(21, 32, 29, .045) 1px, transparent 1px),
-        var(--paper);
-      background-size: 42px 42px;
-      font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
-    }
-
-    a { color: inherit; }
-
-    .language-switch {
-      position: absolute;
-      top: 28px;
-      right: max(20px, calc((100vw - 1180px) / 2));
-      display: flex;
-      gap: 4px;
-    }
-
-    .language-switch button {
-      padding: 8px 11px;
-      border: 0;
-      border-radius: 999px;
-      color: var(--muted);
-      background: transparent;
-      font: inherit;
-      font-size: 11px;
-      cursor: pointer;
-    }
-
-    .language-switch button.active { background: var(--accent); color: #fff; }
-
-    .shell {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    header {
-      min-height: 46vh;
-      display: grid;
-      align-items: end;
-      padding: 42px 0 64px;
-    }
-
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 24px;
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      width: 42px;
-      height: 2px;
-      background: currentColor;
-      content: "";
-    }
-
-    h1 {
-      max-width: 900px;
-      margin: 0;
-      font-size: clamp(42px, 8vw, 100px);
-      font-weight: 600;
-      letter-spacing: -.055em;
-      line-height: .95;
-    }
-
-    .lead {
-      max-width: 680px;
-      margin: 30px 0 0;
-      color: var(--muted);
-      font-size: clamp(16px, 2vw, 20px);
-      line-height: 1.8;
-    }
-
-    .proposals {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      padding-bottom: 72px;
-    }
-
-    .card {
-      position: relative;
-      min-height: 480px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 4px;
-      background: #fff;
-      box-shadow: 0 18px 50px rgba(26, 34, 31, .06);
-      text-decoration: none;
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 26px 64px rgba(26, 34, 31, .12);
-    }
-
-    .preview {
-      height: 255px;
-      border-bottom: 1px solid rgba(0, 0, 0, .1);
-    }
-
-    .minimal {
-      position: relative;
-      background: #f6f4ed;
-    }
-
-    .minimal::before {
-      position: absolute;
-      inset: 35px 32px;
-      border: 1px solid #1d493e;
-      content: "";
-    }
-
-    .minimal::after {
-      position: absolute;
-      top: 35px;
-      right: 32px;
-      width: 44%;
-      height: 74%;
-      background: #1d493e;
-      content: "";
-    }
-
-    .industrial {
-      position: relative;
-      background:
-        linear-gradient(rgba(255, 255, 255, .06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, .06) 1px, transparent 1px),
-        #151918;
-      background-size: 28px 28px;
-    }
-
-    .industrial::before {
-      position: absolute;
-      top: 42px;
-      left: 32px;
-      width: 54%;
-      height: 92px;
-      border-top: 8px solid #ef6a35;
-      border-bottom: 1px solid #59605e;
-      content: "";
-    }
-
-    .industrial::after {
-      position: absolute;
-      right: -20px;
-      bottom: 28px;
-      width: 72%;
-      height: 90px;
-      border: 1px solid #818785;
-      transform: skewX(-18deg);
-      content: "";
-    }
-
-    .warm {
-      position: relative;
-      background: #dccdb9;
-    }
-
-    .warm::before {
-      position: absolute;
-      top: -55px;
-      right: -20px;
-      width: 210px;
-      height: 210px;
-      border-radius: 50%;
-      background: #a85035;
-      content: "";
-    }
-
-    .warm::after {
-      position: absolute;
-      left: 38px;
-      bottom: 33px;
-      width: 70%;
-      height: 105px;
-      border-radius: 80px 80px 4px 4px;
-      background: #273b35;
-      content: "";
-    }
-
-    .card-content { padding: 28px; }
-
-    .number {
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: .16em;
-    }
-
-    h2 {
-      margin: 12px 0 8px;
-      font-size: 26px;
-      letter-spacing: -.02em;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-    .open {
-      position: absolute;
-      right: 24px;
-      bottom: 22px;
-      display: grid;
-      width: 42px;
-      height: 42px;
-      place-items: center;
-      border: 1px solid var(--line);
-      border-radius: 50%;
-      font-size: 20px;
-    }
-
-    footer {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      padding: 26px 0 36px;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    @media (max-width: 850px) {
-      header { min-height: auto; padding-top: 90px; }
-      .proposals { grid-template-columns: 1fr; }
-      .card { min-height: 430px; }
-      footer { flex-direction: column; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>暉盈國際事業有限公司｜防水材料、外牆仿石塗料、環氧樹脂地坪</title>
+<meta name="description" content="暉盈國際事業有限公司供應建築防水材料、外牆多彩仿石塗料與環氧樹脂地坪系統，服務全台營造、防水工程與建築設計單位。">
+<link rel="icon" href="assets/img/brand/logo-ink-sm.png">
+<link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-  <div class="language-switch" aria-label="Language">
-    <button class="active" type="button" data-lang-button="en">EN</button>
-    <button type="button" data-lang-button="zh">中文</button>
+
+<div class="demo-flag">本頁為網站示範版（Demo）— 公司文案、實績照片與部分內容待確認後補齊</div>
+
+<div class="topbar">
+  <div class="wrap">
+    <div><span>02-8521-9356</span><span>huiying1215888@gmail.com</span></div>
+    <div>新北市新莊區榮華路二段 67 號 5F</div>
   </div>
-  <header>
-    <div class="shell">
-      <div class="eyebrow">Huiying Materials / Website Direction</div>
-      <h1 data-en-html="Huiying Materials<br>Website Concepts" data-zh-html="暉盈材料<br>網站視覺提案">Huiying Materials<br>Website Concepts</h1>
-      <p class="lead" data-en="Three one-page website directions for reviewing the brand mood, layout and preferred visual style." data-zh="以下提供三種一頁式首頁方向。內容目前皆為示意，重點是先確認品牌氣質、版面節奏與喜歡的視覺方向。">Three one-page website directions for reviewing the brand mood, layout and preferred visual style.</p>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <img class="mark" src="assets/img/brand/logo-ink.png" alt="Huiying materials">
+      <span class="name">暉盈國際事業有限公司<small>Huiying Int'l Business Co.</small></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="開啟選單">選單</button>
+    <nav class="main" id="mainNav">
+      <a href="index.html" class="active">首頁</a>
+      <a href="waterproofing.html">防水材料</a>
+      <a href="stone.html">外牆仿石塗料</a>
+      <a href="about.html">關於暉盈</a>
+      <a href="contact.html" class="cta">詢價與洽詢</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <img class="bg" src="assets/img/photo/hero-2.jpg" alt="建築外牆">
+  <div class="wrap">
+    <div class="eyebrow">Huiying Materials</div>
+    <h1>把對的材料，送到對的工地。</h1>
+    <p>暉盈國際專營建築防水材料與外牆裝飾塗料。從素地封閉、主防水層到面漆保護，我們提供完整的系統配套與技術支援，協助營造、設計與施工單位順利施作。</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <a class="btn btn-primary" href="waterproofing.html">瀏覽防水材料 →</a>
+      <a class="btn btn-ghost" href="stone.html">認識外牆仿石塗料</a>
     </div>
-  </header>
+  </div>
+</div>
 
-  <main class="shell">
-    <section class="proposals" aria-label="網站提案">
-      <a class="card" href="concept-a.html">
-        <div class="preview minimal"></div>
-        <div class="card-content">
-          <span class="number">DIRECTION 01</span>
-          <h2 data-en="Architectural Minimal" data-zh="極簡建築感">Architectural Minimal</h2>
-          <p data-en="Generous space, a precise grid and deep green create a refined, professional identity." data-zh="留白、俐落網格與深綠色。適合希望呈現品質、設計感與專業度的品牌。">Generous space, a precise grid and deep green create a refined, professional identity.</p>
+<div class="hero-stats">
+  <div class="wrap">
+    <div><b>7</b><span>防水材料系列</span></div>
+    <div><b>8</b><span>環氧樹脂地坪系統</span></div>
+    <div><b>15</b><span>仿石塗料色系</span></div>
+    <div><b>全台</b><span>供貨與技術服務</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Product Lines</div>
+      <h2>三大產品線</h2>
+      <p>依部位、基材與工程需求，提供成套的材料配置，而不只是單一產品。</p>
+    </div>
+    <div class="grid g3">
+
+      <a class="cat-card" href="waterproofing.html">
+        <img src="assets/img/photo/hero-4.jpg" alt="防水材料">
+        <div class="inner">
+          <span class="tag">Waterproofing</span>
+          <h3>建築防水材料</h3>
+          <p>底漆、複合式防水、彈性水泥、止水材料、面漆與透明保護層，涵蓋屋頂、外牆、浴廁與地下室工程。</p>
+          <span class="more">7 大系列 →</span>
         </div>
-        <span class="open" aria-hidden="true">↗</span>
       </a>
 
-      <a class="card" href="concept-b.html">
-        <div class="preview industrial"></div>
-        <div class="card-content">
-          <span class="number">DIRECTION 02</span>
-          <h2 data-en="Industrial Professional" data-zh="專業工程感">Industrial Professional</h2>
-          <p data-en="Dark tones, high contrast and technical lines emphasize capability, efficiency and trust." data-zh="深色、高對比與技術線條。強調供應能力、效率，以及值得信賴的工程形象。">Dark tones, high contrast and technical lines emphasize capability, efficiency and trust.</p>
+      <a class="cat-card" href="stone.html">
+        <img src="assets/img/photo/hero-3.jpg" alt="外牆仿石塗料">
+        <div class="inner">
+          <span class="tag">Stone-Effect Coating</span>
+          <h3>外牆多彩仿石塗料</h3>
+          <p>水性多彩仿花崗岩塗料，一槍成型、仿真度達 90% 以上，是高檔石材的環保替代方案。</p>
+          <span class="more">看塗裝系統與色卡 →</span>
         </div>
-        <span class="open" aria-hidden="true">↗</span>
       </a>
 
-      <a class="card" href="concept-c.html">
-        <div class="preview warm"></div>
-        <div class="card-content">
-          <span class="number">DIRECTION 03</span>
-          <h2 data-en="Warm and Natural" data-zh="溫暖自然感">Warm and Natural</h2>
-          <p data-en="Earth tones, soft curves and approachable language highlight lasting partnerships." data-zh="大地色、圓弧與親切文案。適合希望降低距離感、凸顯長期合作關係的品牌。">Earth tones, soft curves and approachable language highlight lasting partnerships.</p>
+      <a class="cat-card" href="about.html#epoxy">
+        <img src="assets/img/photo/hero-1.jpg" alt="環氧樹脂地坪">
+        <div class="inner">
+          <span class="tag">Epoxy Flooring</span>
+          <h3>環氧樹脂地坪系統</h3>
+          <p>底塗、中塗、薄塗面塗、自流平、防靜電與水性地坪共 8 套系統，適用廠房、無塵室、停車場與醫療空間。</p>
+          <span class="more">系統一覽 →</span>
         </div>
-        <span class="open" aria-hidden="true">↗</span>
       </a>
-    </section>
-  </main>
 
-  <footer class="shell">
-    <span>HUIYING MATERIALS · INITIAL WEBSITE CONCEPT</span>
-    <span data-en="All concepts are static one-page websites" data-zh="三款皆為純靜態單頁網站">All concepts are static one-page websites</span>
-  </footer>
-  <script src="language.js"></script>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Why Huiying</div>
+      <h2>我們賣的不只是材料</h2>
+    </div>
+    <div class="feature">
+      <div class="f">
+        <h4>系統配套，不是單品</h4>
+        <p>防水失敗多半發生在層與層之間。我們依現場狀況配出底漆、主材、面漆的完整配套，避免不相容的材料混用。</p>
+      </div>
+      <div class="f">
+        <h4>選材以現場條件為準</h4>
+        <p>基材、部位、氣候與工期都會影響材料選擇。與其推銷單一產品，我們先了解現場，再給出合理的材料建議。</p>
+      </div>
+      <div class="f">
+        <h4>現場技術支援</h4>
+        <p>素地整理、塗佈量、施工溫濕度與工序間隔，都會影響成敗。開工前可安排技術說明與樣板施作。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">How We Work</div>
+      <h2>合作流程</h2>
+      <p>從詢問到進場，通常四個步驟。</p>
+    </div>
+    <div class="system">
+      <div class="step">
+        <div class="num">1</div>
+        <div><h4>了解現場</h4><p>施作部位、基材狀況、面積與預計工期；有圖說或規範可直接提供。</p></div>
+        <div class="meta">—</div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div><h4>材料配套建議</h4><p>提出底漆、主防水層與面漆的完整配置，並說明各層用量與工序間隔。</p></div>
+        <div class="meta">—</div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div><h4>報價與樣板</h4><p>確認數量與交期後報價；外牆裝飾工程可先製作樣板供監造與業主確認。</p></div>
+        <div class="meta">—</div>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <div><h4>供貨與技術支援</h4><p>依工進分批供貨，開工前可安排施工說明，施作期間持續提供技術協助。</p></div>
+        <div class="meta">—</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tight alt">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+    <div>
+      <h2 style="font-size:26px;margin-bottom:6px">有工程要估？把圖說寄給我們</h2>
+      <p style="color:var(--muted);margin:0">告訴我們部位、面積與工期，我們回覆材料配套建議與報價。</p>
+    </div>
+    <a class="btn btn-dark" href="contact.html">立即詢價 →</a>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <img class="flogo" src="assets/img/brand/logo-white.png" alt="Huiying materials">
+        <p style="margin:0">暉盈國際事業有限公司<br>Huiying Int'l Business Co.<br>統一編號 95431021</p>
+      </div>
+      <div>
+        <h4>產品</h4>
+        <ul>
+          <li><a href="waterproofing.html">防水材料</a></li>
+          <li><a href="stone.html">外牆仿石塗料</a></li>
+          <li><a href="about.html#epoxy">環氧樹脂地坪</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>資訊</h4>
+        <ul>
+          <li><a href="about.html">關於暉盈</a></li>
+          <li><a href="contact.html">聯絡與詢價</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>聯絡我們</h4>
+        <ul>
+          <li>電話 02-8521-9356／02-8521-9359</li>
+          <li>傳真 02-8521-9279</li>
+          <li><a href="mailto:huiying1215888@gmail.com">huiying1215888@gmail.com</a></li>
+          <li>24253 新北市新莊區榮華路二段 67 號 5F</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">
+      <span>© 2026 暉盈國際事業有限公司</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/nav.js"></script>
 </body>
 </html>
