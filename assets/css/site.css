@@ -1,8 +1,15 @@
 @charset "utf-8";
 
 /* 暉盈國際事業有限公司 — 製圖語彙
-   四種中文字體可於前端切換，全部為系統字型，不下載、不閃爍
+   中文一律系統黑體，不下載、不閃爍
    數值使用自行託管的窄體子集（8 KB，僅拉丁字母數字） */
+
+/* 跨頁淡入轉場（支援的瀏覽器自動生效，其餘忽略） */
+@view-transition { navigation: auto; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .16s; }
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+}
 
 @font-face {
   font-family: "HY Num";
@@ -43,29 +50,12 @@
   /* 內文一律系統黑體 */
   --f-body: "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC", system-ui, sans-serif;
 
-  /* 標題字體 —— 由 html[data-font] 覆寫 */
+  /* 標題字體 —— 固定系統黑體 */
   --f-disp:  "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC", sans-serif;
   --w-disp:  700;
   --ls-disp: .02em;
   --sc-disp: 1;      /* 字級倍率 */
   --lh-disp: 1.42;
-}
-
-html[data-font="song"] {
-  --f-disp: "Songti TC", "Songti SC", "PMingLiU", "新細明體", "SimSun", serif;
-  --w-disp: 700; --ls-disp: .03em; --sc-disp: 1.04; --lh-disp: 1.44;
-}
-html[data-font="hei"] {
-  --f-disp: "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC", sans-serif;
-  --w-disp: 700; --ls-disp: .02em; --sc-disp: 1; --lh-disp: 1.42;
-}
-html[data-font="kai"] {
-  --f-disp: "Kaiti TC", "BiauKai", "DFKai-SB", "標楷體", "Kaiti SC", "STKaiti", serif;
-  --w-disp: 700; --ls-disp: .05em; --sc-disp: 1.12; --lh-disp: 1.5;
-}
-html[data-font="wide"] {
-  --f-disp: "PingFang TC", "Microsoft JhengHei", "Noto Sans CJK TC", sans-serif;
-  --w-disp: 500; --ls-disp: .15em; --sc-disp: .93; --lh-disp: 1.6;
 }
 
 * { box-sizing: border-box; }
@@ -100,34 +90,6 @@ h1, h2, h3, h4, h5 {
 
 .num { font-family: var(--f-num); font-weight: 600; letter-spacing: .015em; font-variant-numeric: tabular-nums; }
 
-/* ── 標題欄 ─────────────────────────────────── */
-
-.titleblock { background: var(--blue); color: #A9B7C4; border-bottom: 3px solid var(--ink); }
-.titleblock .page { display: flex; align-items: center; flex-wrap: wrap; gap: 0 4px; min-height: 40px; }
-.tb-cell {
-  padding: 8px 16px 8px 0; margin-right: 16px;
-  border-right: 1px solid rgba(255,255,255,.18);
-  font-size: 12px; letter-spacing: .04em;
-}
-.tb-rev { color: var(--sand); }
-
-/* 字體切換器 */
-.fontpick { display: flex; align-items: center; gap: 0; margin-left: auto;
-  flex: 0 0 auto; justify-content: flex-end; padding: 5px 0; }
-.fontpick > span { font-size: 12px; color: #8A99A8; margin-right: 10px; letter-spacing: .06em; }
-.fontpick button {
-  border: 1px solid rgba(255,255,255,.24); border-right-width: 0;
-  background: transparent; color: #C3CEDA;
-  font-family: inherit; font-size: 12.5px; line-height: 1;
-  padding: 7px 0; cursor: pointer; flex: 0 0 auto; width: 46px; text-align: center;
-}
-.fontpick button:last-of-type { border-right-width: 1px; }
-.fontpick button:hover { background: rgba(255,255,255,.1); color: #fff; }
-.fontpick button[aria-pressed="true"] { background: #fff; color: var(--blue); border-color: #fff; font-weight: 700; }
-.fontpick .b-song { font-family: "Songti TC","PMingLiU","新細明體",serif; }
-.fontpick .b-kai  { font-family: "Kaiti TC","BiauKai","DFKai-SB","標楷體",serif; }
-.fontpick .b-wide { letter-spacing: .12em; }
-
 /* ── 頁首 ───────────────────────────────────── */
 
 .masthead {
@@ -152,20 +114,22 @@ h1, h2, h3, h4, h5 {
 .nav a {
   padding: 9px 13px; font-size: 14.5px; font-weight: 500; color: var(--ink-2);
   border-bottom: 3px solid transparent;
+  transition: color .15s, border-color .15s, background-color .15s;
 }
-.nav a:hover { color: var(--ink); border-bottom-color: var(--rule); }
-.nav a.on { color: var(--ink); border-bottom-color: var(--rev); font-weight: 700; }
+.nav a:hover { color: var(--blue); border-bottom-color: var(--blue); }
+.nav a.on { color: var(--ink); border-bottom-color: var(--ink); font-weight: 700; }
 .nav .ask {
   margin-left: 12px; padding: 11px 20px;
   background: var(--ink); color: #fff; font-weight: 700;
   border: 2px solid var(--ink); border-bottom-width: 2px;
 }
-.nav .ask:hover, .nav a.ask.on { background: var(--rev); border-color: var(--rev); color: #fff; }
+.nav .ask:hover, .nav a.ask.on { background: var(--blue); border-color: var(--blue); color: #fff; }
 .nav .lang {
   margin-left: 8px; padding: 8px 12px; font-family: var(--f-num); font-weight: 600;
   font-size: 14px; letter-spacing: .06em; border: 2px solid var(--rule); color: var(--ink-2);
+  transition: color .15s, border-color .15s, background-color .15s;
 }
-.nav .lang:hover { border-color: var(--ink); color: var(--ink); }
+.nav .lang:hover { border-color: var(--blue); color: #fff; background: var(--blue); }
 
 .navbtn {
   display: none; margin-left: auto;
@@ -242,9 +206,10 @@ h1, h2, h3, h4, h5 {
 .index { border-top: 2px solid var(--ink); }
 .index a {
   display: flex; gap: 24px; align-items: center;
-  padding: 24px 0; border-bottom: 1px solid var(--rule);
+  padding: 24px 12px; border-bottom: 1px solid var(--rule);
+  transition: background-color .15s, padding-left .2s;
 }
-.index a:hover { background: var(--paper-2); }
+.index a:hover { background: var(--paper-2); padding-left: 22px; }
 .band.dark .index { border-top-color: rgba(255,255,255,.5); }
 .band.dark .index a { border-bottom-color: rgba(255,255,255,.16); }
 .band.dark .index a:hover { background: rgba(255,255,255,.07); }
@@ -254,8 +219,8 @@ h1, h2, h3, h4, h5 {
 .index .sub { display: block; font-family: var(--f-num); font-weight: 500; font-size: 12.5px; color: var(--muted); letter-spacing: .1em; margin-top: 2px; text-transform: uppercase; }
 .index .desc { flex: 1 1 250px; min-width: 0; color: var(--ink-2); font-size: 14px; line-height: 1.8; }
 .band.dark .index .desc { color: #9DAEBC; }
-.index .go { flex: 0 0 92px; font-family: var(--f-num); font-weight: 600; font-size: 15px; color: var(--ink-2); text-align: right; }
-.index a:hover .go { color: var(--rev); }
+.index .go { flex: 0 0 92px; font-family: var(--f-num); font-weight: 600; font-size: 15px; color: var(--ink-2); text-align: right; transition: color .15s, transform .2s; }
+.index a:hover .go { color: var(--rev); transform: translateX(5px); }
 .band.dark .index .go, .band.dark .index .code { color: #8FA3B4; }
 .band.dark .index a:hover .go, .band.dark .index a:hover .code { color: var(--sand); }
 
@@ -265,16 +230,28 @@ h1, h2, h3, h4, h5 {
 .card {
   flex: 1 1 300px; min-width: 0; background: var(--sheet);
   border: 2px solid var(--ink); display: flex; flex-direction: column;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
 }
-.card:hover { background: var(--paper-2); }
-.card .ph { position: relative; border-bottom: 2px solid var(--ink); }
-.card .ph img { width: 100%; height: 230px; object-fit: cover; }
+.card:hover {
+  border-color: var(--blue);
+  box-shadow: 0 10px 28px rgba(19,28,38,.14);
+  transform: translateY(-3px);
+}
+.card .ph { position: relative; border-bottom: 2px solid var(--ink); overflow: hidden; }
+.card:hover .ph { border-bottom-color: var(--blue); }
+.card .ph img { width: 100%; height: 230px; object-fit: cover; transition: transform .4s ease; }
+.card:hover .ph img { transform: scale(1.05); }
 .card .bd { padding: 22px 22px 24px; display: flex; flex-direction: column; flex: 1; }
-.card h3 { font-size: calc(21px * var(--sc-disp)); margin-bottom: 4px; }
+.card h3 { font-size: calc(21px * var(--sc-disp)); margin-bottom: 4px; transition: color .15s; }
+.card:hover h3 { color: var(--blue); }
 .card .en { font-family: var(--f-num); font-size: 12.5px; letter-spacing: .12em; color: var(--muted); text-transform: uppercase; margin-bottom: 12px; }
 .card p { font-size: 14px; color: var(--ink-2); line-height: 1.8; flex: 1; margin-bottom: 16px; }
-.card .go { font-family: var(--f-num); font-weight: 600; font-size: 14.5px; color: var(--ink); letter-spacing: .04em; }
-.card:hover .go { color: var(--rev); }
+.card .go {
+  font-family: var(--f-num); font-weight: 600; font-size: 14.5px;
+  color: var(--ink); letter-spacing: .04em;
+  transition: color .15s, transform .2s;
+}
+.card:hover .go { color: var(--blue); transform: translateX(5px); }
 
 /* ── 照片 ───────────────────────────────────── */
 
@@ -369,7 +346,9 @@ h1, h2, h3, h4, h5 {
 .schedule .acc summary {
   display: flex; align-items: center; gap: 26px;
   padding: 21px 20px; cursor: pointer; list-style: none;
+  transition: background-color .15s;
 }
+.schedule .acc:not([open]) summary:hover { background: rgba(36,80,107,.05); }
 .schedule .acc summary::-webkit-details-marker { display: none; }
 .schedule .acc summary .k {
   flex: 0 0 50px; font-family: var(--f-num); font-weight: 600;
@@ -388,7 +367,9 @@ h1, h2, h3, h4, h5 {
 .schedule .acc summary .tg {
   flex: 0 0 32px; height: 32px; position: relative;
   border: 2px solid var(--ink); background: var(--sheet);
+  transition: background-color .15s, border-color .15s, transform .15s;
 }
+.schedule .acc summary:hover .tg { border-color: var(--blue); transform: scale(1.08); }
 .schedule .acc summary .tg::after {
   content: ""; position: absolute; left: 50%; top: 50%; width: 13px; height: 3px;
   background: var(--ink); transform: translate(-50%,-50%);
@@ -437,9 +418,10 @@ h1, h2, h3, h4, h5 {
 .jump a {
   padding: 12px 16px; font-size: 13.5px; font-weight: 500; color: var(--ink-2);
   border-right: 1px solid var(--rule); flex: 1 1 auto; text-align: center;
+  transition: background-color .15s, color .15s;
 }
 .jump a:last-child { border-right: 0; }
-.jump a:hover { background: var(--ink); color: #fff; }
+.jump a:hover { background: var(--blue); color: #fff; }
 
 /* ── 色卡（緊湊格狀：hover／點擊顯示色名）──────── */
 
@@ -448,8 +430,11 @@ h1, h2, h3, h4, h5 {
   position: relative; margin: 0; padding: 0; display: block;
   border: 2px solid var(--ink); background: var(--sheet); cursor: pointer;
   font: inherit; overflow: hidden;
+  transition: border-color .15s, transform .15s, box-shadow .15s;
 }
-.swgrid .sw img { width: 100%; height: 104px; object-fit: cover; display: block; }
+.swgrid .sw:hover { border-color: var(--blue); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(19,28,38,.15); }
+.swgrid .sw img { width: 100%; height: 104px; object-fit: cover; display: block; transition: transform .3s ease; }
+.swgrid .sw:hover img { transform: scale(1.07); }
 .swgrid .sw .nm {
   position: absolute; left: 0; right: 0; bottom: 0;
   background: rgba(19,28,38,.9); color: #fff;
@@ -503,8 +488,14 @@ table.tbl td.n { font-family: var(--f-num); font-weight: 600; font-size: 15.5px;
 /* ── 文章列表 ───────────────────────────────── */
 
 .posts { border-top: 2px solid var(--ink); }
-.posts a { display: flex; gap: 28px; align-items: flex-start; padding: 24px 0; border-bottom: 1px solid var(--rule); }
-.posts a:hover { background: var(--paper-2); }
+.posts a {
+  display: flex; gap: 28px; align-items: flex-start;
+  padding: 24px 12px; border-bottom: 1px solid var(--rule);
+  transition: background-color .15s, padding-left .2s;
+}
+.posts a:hover { background: var(--paper-2); padding-left: 22px; }
+.posts a:hover h3 { color: var(--blue); }
+.posts h3 { transition: color .15s; }
 .posts .th { flex: 0 0 230px; border: 2px solid var(--ink); }
 .posts .th img { width: 100%; height: 142px; object-fit: cover; }
 .posts a > span:nth-child(2) { flex: 1 1 auto; min-width: 0; }
@@ -540,7 +531,9 @@ table.tbl td.n { font-family: var(--f-num); font-weight: 600; font-size: 15.5px;
   display: inline-block; padding: 14px 30px;
   font-family: var(--f-body); font-size: 15px; font-weight: 700; letter-spacing: .04em;
   border: 2px solid var(--ink); background: var(--ink); color: #fff; cursor: pointer;
+  transition: background-color .15s, border-color .15s, color .15s, transform .15s;
 }
+.btn:active { transform: scale(.98); }
 .btn:hover { background: var(--rev); border-color: var(--rev); color: #fff; }
 .btn.line { background: var(--sheet); color: var(--ink); }
 .btn.line:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
@@ -637,10 +630,6 @@ table.tbl td.n { font-family: var(--f-num); font-weight: 600; font-size: 15.5px;
   .nav.open .ask, .nav.open .lang { margin: 10px 0 0; text-align: center; }
   .navbtn { display: block; }
   .masthead .page { position: relative; }
-  .fontpick { margin-left: 0; width: 100%; padding-bottom: 8px; }
-  .fontpick > span { display: none; }
-  .fontpick button { flex: 1 1 auto; }
-  .tb-cell { font-size: 11.5px; padding-right: 12px; margin-right: 12px; }
   .band > .page, .band > .text { padding: 48px 0; }
   .hero .page { padding: 54px 0 48px; }
   .head .page { padding: 42px 0 38px; }

@@ -10,27 +10,27 @@
   });
 })();
 
-/* 字體切換 —— 四種都是系統字型，切換不需下載 */
+/* 滑鼠移上站內連結即預載目標頁，換頁更快 */
 (function () {
-  var KEY = 'hy_font';
-  var pick = document.querySelector('.fontpick');
-  if (!pick) return;
-  var cur = document.documentElement.getAttribute('data-font') || 'hei';
-
-  function paint(v) {
-    document.documentElement.setAttribute('data-font', v);
-    pick.querySelectorAll('button').forEach(function (b) {
-      b.setAttribute('aria-pressed', b.dataset.font === v ? 'true' : 'false');
-    });
+  if (location.protocol === 'file:') return;
+  var done = {};
+  function grab(a) {
+    var h = a.getAttribute('href') || '';
+    if (!h || h.charAt(0) === '#' || /^[a-z]+:/i.test(h) || done[h]) return;
+    if (!/\.html($|#)|\/$/.test(h)) return;
+    done[h] = 1;
+    var l = document.createElement('link');
+    l.rel = 'prefetch'; l.href = h; l.as = 'document';
+    document.head.appendChild(l);
   }
-  paint(cur);
-
-  pick.addEventListener('click', function (e) {
-    var b = e.target.closest('button[data-font]');
-    if (!b) return;
-    try { localStorage.setItem(KEY, b.dataset.font); } catch (err) {}
-    paint(b.dataset.font);
-  });
+  document.addEventListener('mouseover', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (a) grab(a);
+  }, { passive: true });
+  document.addEventListener('touchstart', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]');
+    if (a) grab(a);
+  }, { passive: true });
 })();
 
 /* 首頁版頭剖面圖輪播：自動輪播＋可滑動，滑鼠移入或觸碰即暫停 */
