@@ -1,33 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://huiyingmaterials.com/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://huiyingmaterials.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://huiyingmaterials.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huiyingmaterials.com/"/>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://huiyingmaterials.com/waterproofing.html</loc>
+    <loc>https://huiyingmaterials.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://huiyingmaterials.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://huiyingmaterials.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huiyingmaterials.com/"/>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://huiyingmaterials.com/waterproofing.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://huiyingmaterials.com/waterproofing.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://huiyingmaterials.com/en/waterproofing.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huiyingmaterials.com/waterproofing.html"/>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://huiyingmaterials.com/en/waterproofing.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://huiyingmaterials.com/waterproofing.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://huiyingmaterials.com/en/waterproofing.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huiyingmaterials.com/waterproofing.html"/>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://huiyingmaterials.com/stone.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://huiyingmaterials.com/stone.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://huiyingmaterials.com/en/stone.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huiyingmaterials.com/stone.html"/>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://huiyingmaterials.com/about.html</loc>
+    <loc>https://huiyingmaterials.com/en/stone.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://huiyingmaterials.com/stone.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://huiyingmaterials.com/en/stone.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huiyingmaterials.com/stone.html"/>
     <lastmod>2026-07-29</lastmod>
-    <changefreq>yearly</changefreq>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://huiyingmaterials.com/insights/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://huiyingmaterials.com/insights/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://huiyingmaterials.com/en/insights/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huiyingmaterials.com/insights/"/>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://huiyingmaterials.com/en/insights/</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://huiyingmaterials.com/insights/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://huiyingmaterials.com/en/insights/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huiyingmaterials.com/insights/"/>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://huiyingmaterials.com/insights/roof-waterproofing-material-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://huiyingmaterials.com/insights/roof-waterproofing-material-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://huiyingmaterials.com/en/insights/roof-waterproofing-material-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huiyingmaterials.com/insights/roof-waterproofing-material-guide.html"/>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://huiyingmaterials.com/en/insights/roof-waterproofing-material-guide.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://huiyingmaterials.com/insights/roof-waterproofing-material-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://huiyingmaterials.com/en/insights/roof-waterproofing-material-guide.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huiyingmaterials.com/insights/roof-waterproofing-material-guide.html"/>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://huiyingmaterials.com/insights/waterproofing-material-comparison.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://huiyingmaterials.com/insights/waterproofing-material-comparison.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://huiyingmaterials.com/en/insights/waterproofing-material-comparison.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huiyingmaterials.com/insights/waterproofing-material-comparison.html"/>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://huiyingmaterials.com/en/insights/waterproofing-material-comparison.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://huiyingmaterials.com/insights/waterproofing-material-comparison.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://huiyingmaterials.com/en/insights/waterproofing-material-comparison.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huiyingmaterials.com/insights/waterproofing-material-comparison.html"/>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://huiyingmaterials.com/insights/why-waterproofing-fails.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://huiyingmaterials.com/insights/why-waterproofing-fails.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://huiyingmaterials.com/en/insights/why-waterproofing-fails.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huiyingmaterials.com/insights/why-waterproofing-fails.html"/>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://huiyingmaterials.com/en/insights/why-waterproofing-fails.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://huiyingmaterials.com/insights/why-waterproofing-fails.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://huiyingmaterials.com/en/insights/why-waterproofing-fails.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huiyingmaterials.com/insights/why-waterproofing-fails.html"/>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://huiyingmaterials.com/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://huiyingmaterials.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://huiyingmaterials.com/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huiyingmaterials.com/about.html"/>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://huiyingmaterials.com/en/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://huiyingmaterials.com/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://huiyingmaterials.com/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huiyingmaterials.com/about.html"/>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://huiyingmaterials.com/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://huiyingmaterials.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://huiyingmaterials.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huiyingmaterials.com/contact.html"/>
     <lastmod>2026-07-29</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://huiyingmaterials.com/en/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://huiyingmaterials.com/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://huiyingmaterials.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://huiyingmaterials.com/contact.html"/>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
