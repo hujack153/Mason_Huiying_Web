@@ -506,6 +506,10 @@ table.tbl td.n { font-family: var(--f-num); font-weight: 600; font-size: 15.5px;
 
 /* ── 詢價單 ─────────────────────────────────── */
 
+.contact-2col { display: flex; flex-wrap: wrap; gap: 52px; align-items: flex-start; }
+.contact-2col > form { flex: 1 1 560px; min-width: 0; }
+.contact-2col > div { flex: 1 1 340px; min-width: 0; }
+
 .form-sheet { border: 2px solid var(--ink); background: var(--sheet); }
 .form-hd { display: flex; justify-content: space-between; gap: 16px; padding: 13px 20px; background: var(--ink); color: #fff; flex-wrap: wrap; }
 .form-hd b { font-family: var(--f-disp); font-weight: var(--w-disp); font-size: 15px; letter-spacing: .1em; }
@@ -522,8 +526,17 @@ table.tbl td.n { font-family: var(--f-num); font-weight: 600; font-size: 15.5px;
 }
 .fld textarea { min-height: 96px; resize: vertical; line-height: 1.9; }
 .fld input:focus, .fld select:focus, .fld textarea:focus { outline: 0; border-bottom-color: var(--rev); }
-.form-ft { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 20px; flex-wrap: wrap; }
-.form-ft small { font-size: 13px; color: var(--muted); flex: 1 1 260px; }
+.form-ft { display: block; padding: 20px; }
+.form-ft small { display: block; font-size: 13px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+.send-acts { display: flex; gap: 10px; flex-wrap: wrap; }
+.send-acts .btn { flex: 1 1 auto; padding: 13px 18px; font-size: 14.5px; text-align: center; white-space: nowrap; }
+.linkbtn {
+  display: inline-block; margin-top: 14px; padding: 0;
+  background: none; border: 0; cursor: pointer; font: inherit; font-size: 13.5px;
+  color: var(--blue); border-bottom: 1px solid var(--rule);
+  transition: color .15s, border-color .15s;
+}
+.linkbtn:hover { color: var(--ink); border-bottom-color: var(--ink); }
 
 /* ── 按鈕 ───────────────────────────────────── */
 
@@ -648,6 +661,8 @@ table.tbl td.n { font-family: var(--f-num); font-weight: 600; font-size: 15.5px;
   .clause .b { padding: 10px 0 24px; }
   .clause.note .b { padding-left: 16px; }
   .fld { flex: 0 0 100%; max-width: 100%; border-right: 0; }
+  .send-acts { width: 100%; }
+  .send-acts .btn { flex: 1 1 100%; }
   .plates > figure, .cards > .card { flex: 1 1 100%; }
   .posts a { flex-direction: column; gap: 16px; }
   .posts .th { flex: 1 1 100%; }

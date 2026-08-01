@@ -92,13 +92,17 @@
 </div>
 
 <section class="band">
-  <div class="page" style="display:grid;grid-template-columns:1.25fr 1fr;gap:52px;align-items:start">
+  <div class="page contact-2col">
     <form class="form-sheet" id="enq">
       <div class="form-hd"><b>Project enquiry</b><span>Form ENQ-01</span></div>
       <div class="fields"><div class="fld"><label for="company"><i>01</i>Company</label><input name="company" type="text" placeholder="" required></div><div class="fld"><label for="person"><i>02</i>Contact name</label><input name="person" type="text" placeholder="" required></div><div class="fld"><label for="phone"><i>03</i>Telephone</label><input name="phone" type="tel" placeholder="" required></div><div class="fld"><label for="email"><i>04</i>Email</label><input name="email" type="email" placeholder=""></div><div class="fld"><label for="topic"><i>05</i>Subject</label><select name="topic"><option>Waterproofing materials</option><option>Stone-effect wall coating</option><option>Epoxy flooring</option><option>Sample panel</option><option>Other</option></select></div><div class="fld full"><label for="detail"><i>06</i>Location / area / programme</label><textarea name="detail" placeholder="e.g. 850 m² roof in New Taipei City, existing PU membrane degraded, start mid-September."></textarea></div></div>
       <div class="form-ft">
-        <small>Submitting opens your email client with the details above filled in.</small>
-        <button class="btn" type="submit">Send enquiry</button>
+        <small>Pick how you'd like to send it — the details above are filled in for you. You can also copy them and send from anywhere.</small>
+        <div class="send-acts">
+          <button class="btn" type="submit">Send with Gmail</button>
+          <button class="btn line" type="button" id="enqMail">Use email app</button>
+        </div>
+        <button class="linkbtn" type="button" id="enqCopy" data-done="Copied">Copy details</button>
       </div>
     </form>
     <div>
@@ -133,21 +137,60 @@
 </footer>
 
 <script>
-document.getElementById('enq').addEventListener('submit', function (e) {
-  e.preventDefault();
-  var f = e.target;
-  var body = [
-    'Company: ' + f.company.value,
-    'Contact name: ' + f.person.value,
-    'Telephone: ' + f.phone.value,
-    'Email: ' + f.email.value,
-    'Subject: ' + f.topic.value, '',
-    'Location / area / programme:', f.detail.value
-  ].join('\n');
-  window.location.href = 'mailto:huiying1215888@gmail.com?subject='
-    + encodeURIComponent('[Project enquiry] ' + f.topic.value + ' - ' + f.company.value)
-    + '&body=' + encodeURIComponent(body);
-});
+(function () {
+  var TO = 'huiying1215888@gmail.com';
+  var f = document.getElementById('enq');
+
+  function pack() {
+    return {
+      subject: '[Project enquiry] ' + f.topic.value + ' - ' + f.company.value,
+      body: [
+        'Company: ' + f.company.value,
+        'Contact name: ' + f.person.value,
+        'Telephone: ' + f.phone.value,
+        'Email: ' + f.email.value,
+        'Subject: ' + f.topic.value, '',
+        'Location / area / programme:', f.detail.value
+      ].join('\n')
+    };
+  }
+
+  // Gmail 網頁版撰寫視窗（新分頁開啟，不影響原本填的內容）
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!f.reportValidity()) return;
+    var m = pack();
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=' + encodeURIComponent(TO)
+      + '&su=' + encodeURIComponent(m.subject)
+      + '&body=' + encodeURIComponent(m.body), '_blank', 'noopener');
+  });
+
+  // 電腦內建的郵件軟體（Outlook、Mail 等）
+  document.getElementById('enqMail').addEventListener('click', function () {
+    if (!f.reportValidity()) return;
+    var m = pack();
+    window.location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(m.subject)
+      + '&body=' + encodeURIComponent(m.body);
+  });
+
+  // 複製全文，貼到 LINE、公司信箱或任何地方
+  document.getElementById('enqCopy').addEventListener('click', function () {
+    var b = this, m = pack(), txt = m.subject + '\n\n' + m.body + '\n\nSend to: ' + TO;
+    var done = function () {
+      var old = b.textContent;
+      b.textContent = b.dataset.done;
+      setTimeout(function () { b.textContent = old; }, 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(done, done);
+    } else {
+      var t = document.createElement('textarea');
+      t.value = txt; document.body.appendChild(t); t.select();
+      try { document.execCommand('copy'); } catch (err) {}
+      document.body.removeChild(t); done();
+    }
+  });
+})();
 </script>
 <script src="../assets/js/nav.js"></script>
 </body>

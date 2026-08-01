@@ -92,13 +92,17 @@
 </div>
 
 <section class="band">
-  <div class="page" style="display:grid;grid-template-columns:1.25fr 1fr;gap:52px;align-items:start">
+  <div class="page contact-2col">
     <form class="form-sheet" id="enq">
       <div class="form-hd"><b>工程詢價單</b><span>表單 ENQ-01</span></div>
       <div class="fields"><div class="fld"><label for="company"><i>01</i>公司／單位名稱</label><input name="company" type="text" placeholder="例：○○營造股份有限公司" required></div><div class="fld"><label for="person"><i>02</i>聯絡人</label><input name="person" type="text" placeholder="" required></div><div class="fld"><label for="phone"><i>03</i>聯絡電話</label><input name="phone" type="tel" placeholder="" required></div><div class="fld"><label for="email"><i>04</i>電子信箱</label><input name="email" type="email" placeholder=""></div><div class="fld"><label for="topic"><i>05</i>詢問項目</label><select name="topic"><option>防水材料</option><option>外牆仿石塗料</option><option>環氧樹脂地坪</option><option>樣板施作</option><option>其他</option></select></div><div class="fld full"><label for="detail"><i>06</i>施作部位／面積／工期</label><textarea name="detail" placeholder="例：新北市某案屋頂 850 m²，既有 PU 面層老化，預計 9 月中進場。"></textarea></div></div>
       <div class="form-ft">
-        <small>按下送出會開啟您的郵件軟體，並自動帶入上方內容。</small>
-        <button class="btn" type="submit">送出詢價單</button>
+        <small>選擇一種寄送方式，上方內容會自動帶入。也可以複製後貼到任何地方寄給我們。</small>
+        <div class="send-acts">
+          <button class="btn" type="submit">用 Gmail 傳送</button>
+          <button class="btn line" type="button" id="enqMail">用電子郵件軟體</button>
+        </div>
+        <button class="linkbtn" type="button" id="enqCopy" data-done="已複製">複製內容</button>
       </div>
     </form>
     <div>
@@ -133,21 +137,60 @@
 </footer>
 
 <script>
-document.getElementById('enq').addEventListener('submit', function (e) {
-  e.preventDefault();
-  var f = e.target;
-  var body = [
-    '公司／單位名稱: ' + f.company.value,
-    '聯絡人: ' + f.person.value,
-    '聯絡電話: ' + f.phone.value,
-    '電子信箱: ' + f.email.value,
-    '詢問項目: ' + f.topic.value, '',
-    '施作部位／面積／工期:', f.detail.value
-  ].join('\n');
-  window.location.href = 'mailto:huiying1215888@gmail.com?subject='
-    + encodeURIComponent('[工程詢價單] ' + f.topic.value + ' - ' + f.company.value)
-    + '&body=' + encodeURIComponent(body);
-});
+(function () {
+  var TO = 'huiying1215888@gmail.com';
+  var f = document.getElementById('enq');
+
+  function pack() {
+    return {
+      subject: '[工程詢價單] ' + f.topic.value + ' - ' + f.company.value,
+      body: [
+        '公司／單位名稱: ' + f.company.value,
+        '聯絡人: ' + f.person.value,
+        '聯絡電話: ' + f.phone.value,
+        '電子信箱: ' + f.email.value,
+        '詢問項目: ' + f.topic.value, '',
+        '施作部位／面積／工期:', f.detail.value
+      ].join('\n')
+    };
+  }
+
+  // Gmail 網頁版撰寫視窗（新分頁開啟，不影響原本填的內容）
+  f.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!f.reportValidity()) return;
+    var m = pack();
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=' + encodeURIComponent(TO)
+      + '&su=' + encodeURIComponent(m.subject)
+      + '&body=' + encodeURIComponent(m.body), '_blank', 'noopener');
+  });
+
+  // 電腦內建的郵件軟體（Outlook、Mail 等）
+  document.getElementById('enqMail').addEventListener('click', function () {
+    if (!f.reportValidity()) return;
+    var m = pack();
+    window.location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(m.subject)
+      + '&body=' + encodeURIComponent(m.body);
+  });
+
+  // 複製全文，貼到 LINE、公司信箱或任何地方
+  document.getElementById('enqCopy').addEventListener('click', function () {
+    var b = this, m = pack(), txt = m.subject + '\n\n' + m.body + '\n\n收件信箱: ' + TO;
+    var done = function () {
+      var old = b.textContent;
+      b.textContent = b.dataset.done;
+      setTimeout(function () { b.textContent = old; }, 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(done, done);
+    } else {
+      var t = document.createElement('textarea');
+      t.value = txt; document.body.appendChild(t); t.select();
+      try { document.execCommand('copy'); } catch (err) {}
+      document.body.removeChild(t); done();
+    }
+  });
+})();
 </script>
 <script src="assets/js/nav.js"></script>
 </body>
