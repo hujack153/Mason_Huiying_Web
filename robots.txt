@@ -1,4 +1,87 @@
+# robots.txt — huiyingmaterials.com
+# 暉盈國際事業有限公司
+
+# ---- 預設：全部允許 ----
 User-agent: *
+Allow: /
+Disallow: /_build/
+
+# ---- 一般搜尋引擎 ----
+User-agent: Googlebot
+Allow: /
+Disallow: /_build/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /_build/
+
+# ---- AI 搜尋與檢索爬蟲（明確允許）----
+# OpenAI
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /_build/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /_build/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /_build/
+
+# Anthropic
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /_build/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /_build/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /_build/
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+Disallow: /_build/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /_build/
+
+# Google AI（AI Overviews / Gemini）
+User-agent: Google-Extended
+Allow: /
+Disallow: /_build/
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+Disallow: /_build/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /_build/
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+Disallow: /_build/
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+Disallow: /_build/
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+Disallow: /_build/
+
+# Common Crawl（多數模型的語料來源）
+User-agent: CCBot
 Allow: /
 Disallow: /_build/
 

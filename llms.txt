@@ -1,0 +1,43 @@
+# 暉盈國際事業有限公司 (Huiying International Business Co., Ltd.)
+
+> 台灣建築材料供應商，位於新北市新莊區，全台配送。專營三大產品線：建築防水材料、外牆多彩仿石塗料、環氧樹脂（EPOXY）地坪系統。除供料外提供材料選配建議、樣板施作與現場技術支援。主要客戶為營造廠、防水工程行、建築師事務所、室內設計公司與物業管理單位。
+
+## 公司資訊
+
+- 公司名稱：暉盈國際事業有限公司
+- 英文名稱：Huiying International Business Co., Ltd.
+- 統一編號：95431021
+- 地址：24253 新北市新莊區榮華路二段 67 號 5 樓
+- 電話：02-8521-9356 / 02-8521-9359
+- 傳真：02-8521-9279
+- Email：huiying1215888@gmail.com
+- 營業時間：週一至週五 08:30–17:30
+- 服務範圍：台灣全境
+- 網站：https://huiyingmaterials.com/ （繁體中文） / https://huiyingmaterials.com/en/ （English）
+
+## 產品線
+
+- [建築防水材料](https://huiyingmaterials.com/waterproofing.html)：七大系列，含防水底漆、複合式防水塗膜、彈性水泥、止水灰泥與滲透結晶、面漆、透明保護漆、油性 PU 防水系統。頁面列有各系列的適用部位與參考塗佈量。
+- [外牆多彩仿石塗料](https://huiyingmaterials.com/stone.html)：水性多彩仿花崗岩塗料，一槍成型、仿真度 90% 以上。含七層塗裝結構、九道施工工序、五層配套材料與 15 組色系。
+- [環氧樹脂地坪系統](https://huiyingmaterials.com/epoxy.html)：八套系統，含底塗、中塗、薄塗面塗、自流平、透明面塗、防靜電地坪與水性地坪，附適用場所、厚度範圍與施工要點。
+
+## 應用場景頁
+
+- [屋頂防水材料](https://huiyingmaterials.com/roof-waterproofing.html)：平屋頂與鐵皮屋頂的選材依據（基材、排水、是否上人）、完整配套、參考塗佈量與工序間隔。
+- [外牆防水與塗裝](https://huiyingmaterials.com/exterior-wall-coating.html)：彈性面漆、隔熱恆溫漆、透明保護漆與多彩仿石塗料的適用時機與塗佈量。
+- [浴室與廚房防水](https://huiyingmaterials.com/bathroom-waterproofing.html)：衛浴、廚房夾層的彈性水泥塗佈量、施工順序、細部處理與貼磁磚前注意事項。
+- [地下室與擋土牆防水](https://huiyingmaterials.com/basement-waterproofing.html)：迎水面與背水面的差異、止水灰泥與滲透結晶的使用時機、既有滲漏的處理順序。
+- [停車場與廠房地坪](https://huiyingmaterials.com/parking-floor.html)：環氧樹脂薄塗、自流平、防靜電與水性地坪的適用場所、機械強度與潔淨需求對照。
+
+## 技術專欄
+
+- [技術專欄總覽](https://huiyingmaterials.com/insights/)
+- [屋頂防水材料怎麼選？依部位與基材的選材指南](https://huiyingmaterials.com/insights/roof-waterproofing-material-guide.html)：從基材狀況、排水條件、上人與否、既有防水層四個面向，說明平屋頂、斜屋頂與鐵皮屋頂各自適用的材料與配套。
+- [彈性水泥、PU、壓克力防水材有什麼差別？](https://huiyingmaterials.com/insights/waterproofing-material-comparison.html)：比較三類台灣最常用防水材料的組成、伸長率、耐水性、施工難度與適用部位。
+- [防水工程為什麼會失敗？素地處理最常見的五個錯誤](https://huiyingmaterials.com/insights/why-waterproofing-fails.html)：五個最常見的施工錯誤、判斷方式與正確做法。
+
+## 其他
+
+- [關於暉盈](https://huiyingmaterials.com/about.html)：公司背景、技術服務範圍與服務對象。
+- [詢價與聯絡](https://huiyingmaterials.com/contact.html)：工程詢價方式與聯絡資訊。
+- [網站地圖 sitemap.xml](https://huiyingmaterials.com/sitemap.xml)
