@@ -125,8 +125,8 @@ h1, h2, h3, h4, h5 {
 }
 .nav .ask:hover, .nav a.ask.on { background: var(--blue); border-color: var(--blue); color: #fff; }
 .nav .lang {
-  margin-left: 8px; padding: 8px 12px; font-family: var(--f-num); font-weight: 600;
-  font-size: 14px; letter-spacing: .06em; border: 2px solid var(--rule); color: var(--ink-2);
+  margin-left: 6px; padding: 5px 8px; font-family: var(--f-num); font-weight: 600;
+  font-size: 12px; letter-spacing: .04em; border: 1px solid var(--rule); color: var(--ink-2);
   transition: color .15s, border-color .15s, background-color .15s;
 }
 .nav .lang:hover { border-color: var(--blue); color: #fff; background: var(--blue); }
