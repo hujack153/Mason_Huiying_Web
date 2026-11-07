@@ -1,0 +1,101 @@
+{
+  "slug": "parking-floor",
+  "photo": "floor/epoxy-05.jpg",
+  "photocap": "Car park flooring",
+  "photono": "PH-09",
+  "nav": "Floors",
+  "title": "Car Park and Industrial Flooring｜Epoxy Resin Flooring Systems｜Huiying",
+  "desc": "Car park and factory flooring: thin-build, self-levelling, anti-static and water-based epoxy matched to load, chemical and hygiene needs.",
+  "kw": "car park flooring, industrial flooring, epoxy flooring, cleanroom flooring, anti-static flooring",
+  "h1": "Car park and industrial flooring",
+  "lead": "Specifying a floor is essentially a trade-off between three things: mechanical strength, chemical resistance and cleanliness. A car park needs abrasion resistance and dust control; a cleanroom needs a seamless, cleanable surface; a food plant needs thermal and chemical resistance.",
+  "img": "epoxy-05",
+  "sections": [
+    {
+      "h": "A floor is a system, not a coat of paint",
+      "p": [
+        "A complete epoxy floor is built in three stages:",
+        "**Primer** — penetrates and seals the substrate, improving adhesion and hardness. This layer determines whether the system stays down.",
+        "**Body coat** — the structural layer, improving flatness, thickness, mechanical strength and impact resistance. It is also the key to overall cost, since thickness can be built up here rather than in the more expensive topcoat.",
+        "**Topcoat** — determines final appearance, abrasion and chemical resistance, and how easily the floor can be cleaned."
+      ]
+    },
+    {
+      "h": "Selecting by facility type",
+      "table": {
+        "head": [
+          "System",
+          "Characteristics",
+          "Applications"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "Thin-build topcoat",
+              "Easy to apply, wide colour choice, convenient installation; prevents dusting",
+              "Car parks, general factories, garages"
+            ]
+          },
+          {
+            "cells": [
+              "Self-levelling",
+              "Excellent adhesion, smooth seamless surface, good water and chemical resistance, high gloss",
+              "Hospitals, pharmaceutical and electronics plants, food factories, cleanrooms, schools, offices"
+            ]
+          },
+          {
+            "cells": [
+              "Clear topcoat",
+              "High gloss, transparency and strength, chemical resistant, retains the existing floor appearance",
+              "Hotels, residential, design studios, offices"
+            ]
+          },
+          {
+            "cells": [
+              "Anti-static",
+              "Dissipates static charge at the floor surface, preventing sparking",
+              "Semiconductor and electronics plants, server rooms, hazardous areas, instrument facilities"
+            ]
+          },
+          {
+            "cells": [
+              "Water-based",
+              "No VOC, low odour, environmentally responsible; suits facilities that cannot close for long",
+              "Food, electronics, pharmaceutical, cosmetics and paper plants"
+            ]
+          }
+        ]
+      },
+      "p": []
+    },
+    {
+      "h": "Practical considerations for car parks",
+      "p": [
+        "Car parks are large in area, cost-sensitive, and require abrasion resistance and dust control rather than high gloss or cleanroom standards.",
+        "The standard approach is therefore primer, body coat and thin-build topcoat. The body coat makes good the level differences and defects in the existing slab; the topcoat provides the wearing surface and the base for line marking.",
+        "Two factors are frequently underestimated: **phasing and ventilation**. Most car parks cannot close entirely, so the work has to be phased; and where an underground car park is poorly ventilated, a water-based system should be considered first to limit odour."
+      ]
+    },
+    {
+      "h": "Factories and cleanrooms",
+      "p": [
+        "For factory floors the governing properties are impact and chemical resistance. Forklifts, racking and chemical spillage all test the floor, so body coat thickness and mechanical strength are the priority.",
+        "Cleanrooms and healthcare spaces require a **seamless** and **easily cleaned** surface; the smooth finish of a self-levelling system reduces contaminant adhesion and makes cleaning more effective.",
+        "Food plants are among the most demanding environments, combining hot washdown, fats, organic acids and frequent cleaning. Thermal and chemical resistance specifications should be confirmed explicitly for these facilities."
+      ]
+    },
+    {
+      "h": "Confirm before starting",
+      "p": [],
+      "list": [
+        "**Substrate moisture content** — epoxy is sensitive to moisture; excess causes blistering and delamination",
+        "**Existing floor condition** — dusting, oil contamination, failed coatings",
+        "**Loading and use** — forklifts, racking and vehicle loads determine body coat thickness",
+        "**Chemical exposure** — which acids, alkalis or solvents, at what concentration and frequency",
+        "**Available downtime** — the number of days the facility can close determines which systems are viable"
+      ]
+    }
+  ],
+  "cta": "Send us the facility type, area, pattern of use and available downtime, and we will return a suitable system and material specification.",
+  "order": 5
+}

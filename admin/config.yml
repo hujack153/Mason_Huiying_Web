@@ -1,0 +1,306 @@
+# 暉盈官網後台（Decap CMS）設定
+# 文件：https://decapcms.org/docs/
+
+backend:
+  name: github
+  repo: hujack153/Mason_Huiying_Web
+  branch: main
+  # GitHub 登入用的 OAuth 中介（Cloudflare Worker），部署後把網址填在這裡
+  base_url: https://huiying-cms-auth.REPLACE_ME.workers.dev
+  commit_messages:
+    create: "後台新增：{{collection}}「{{slug}}」"
+    update: "後台修改：{{collection}}「{{slug}}」"
+    delete: "後台刪除：{{collection}}「{{slug}}」"
+    uploadMedia: "後台上傳圖片：{{path}}"
+    deleteMedia: "後台刪除圖片：{{path}}"
+
+# 存檔後先進「草稿 → 審核中 → 可發布」，每筆修改是一個 PR，有預覽網址；按「發布」才上線
+publish_mode: editorial_workflow
+
+locale: zh_Hant
+site_url: https://huiyingmaterials.com
+display_url: https://huiyingmaterials.com
+logo_url: /assets/img/brand/logo-ink.png
+
+media_folder: assets/img/uploads
+public_folder: /assets/img/uploads
+
+# ─────────── 共用欄位 ───────────
+_fields:
+  desc: &desc
+    label: 搜尋結果描述
+    name: desc
+    widget: text
+    hint: 顯示在 Google 搜尋結果的摘要，建議 60–160 字
+    pattern: ['^[\s\S]{1,160}$', '最多 160 字']
+  kw: &kw
+    label: 關鍵字
+    name: kw
+    widget: string
+    required: false
+    hint: 以逗號分隔
+  feat: &feat
+    label: 特點
+    name: feat
+    widget: list
+    field: {label: 特點, name: item, widget: string}
+  spec: &spec
+    label: 規格
+    name: spec
+    widget: list
+    summary: "{{fields.k}}：{{fields.v}}"
+    fields:
+      - {label: 項目, name: k, widget: string}
+      - {label: 數值, name: v, widget: string}
+  sections: &sections
+    label: 段落
+    name: sections
+    widget: list
+    summary: "{{fields.h}}"
+    fields:
+      - {label: 小標題, name: h, widget: string}
+      - label: 段落文字
+        name: p
+        widget: list
+        hint: 每一項是一段。用 **兩個星號** 包住的文字會變粗體
+        field: {label: 段落, name: item, widget: text}
+      - label: 條列項目
+        name: list
+        widget: list
+        required: false
+        field: {label: 項目, name: item, widget: text}
+      - label: 表格
+        name: table
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - label: 表頭
+            name: head
+            widget: list
+            required: false
+            field: {label: 欄位名稱, name: item, widget: string}
+          - label: 資料列
+            name: rows
+            widget: list
+            required: false
+            summary: "{{fields.cells}}"
+            fields:
+              - label: 儲存格
+                name: cells
+                widget: list
+                field: {label: 內容, name: item, widget: string}
+      - label: 段落結尾連結
+        name: link
+        widget: object
+        required: false
+        collapsed: true
+        fields:
+          - {label: 連結文字, name: text, widget: string, required: false}
+          - {label: 網址, name: href, widget: string, required: false, hint: 站內頁面例如 stone.html}
+
+  article: &article
+    - label: 網址代稱
+      name: slug
+      widget: string
+      hint: 只能用英文小寫、數字與 -，例如 roof-leak-guide。中英文版要用同一個。發布後請勿修改
+      pattern: ['^[a-z0-9]+(-[a-z0-9]+)*$', '只能用英文小寫、數字與 -']
+    - {label: 標題, name: title, widget: string}
+    - {label: 發布日期, name: date, widget: datetime, format: 'YYYY-MM-DD', date_format: 'YYYY-MM-DD', time_format: false}
+    - *desc
+    - *kw
+    - label: 封面圖
+      name: hero
+      widget: image
+      hint: 橫式照片，寬度至少 1600 px
+    - {label: 開頭引言, name: lead, widget: text}
+    - *sections
+
+  solution: &solution
+    - {label: 網址代稱, name: slug, widget: hidden}
+    - {label: 排序, name: order, widget: hidden}
+    - {label: 照片, name: photo, widget: hidden}
+    - {label: 照片說明, name: photocap, widget: hidden}
+    - {label: 照片編號, name: photono, widget: hidden}
+    - {label: 附圖, name: img, widget: hidden}
+    - {label: 選單名稱, name: nav, widget: string}
+    - {label: 瀏覽器分頁標題, name: title, widget: string}
+    - *desc
+    - *kw
+    - {label: 頁面大標, name: h1, widget: string}
+    - {label: 開頭引言, name: lead, widget: text}
+    - *sections
+    - {label: 頁尾詢價說明, name: cta, widget: text}
+
+  waterproofing: &waterproofing
+    - label: 產品系列
+      name: series
+      widget: list
+      summary: "{{fields.name}}"
+      hint: 新增或刪除系列後，首頁與關於頁的「X 大系列」會自動更新
+      fields:
+        - label: 代號
+          name: id
+          widget: string
+          hint: 英文小寫，作為網址錨點，例如 primer。中英文版要用同一個
+          pattern: ['^[a-z0-9-]+$', '只能用英文小寫、數字與 -']
+        - {label: 名稱, name: name, widget: string}
+        - {label: 一句話定位, name: tagline, widget: string}
+        - {label: 說明, name: desc, widget: text}
+        - *feat
+        - {label: 適用部位, name: use, widget: text}
+        - *spec
+
+  stone: &stone
+    - label: 塗層產品
+      name: products
+      widget: list
+      summary: "{{fields.name}}"
+      hint: 塗層順序由下（底漆）到上（面塗）。若增減塗層，頁面上的剖面圖需請工程師更新
+      fields:
+        - {label: 名稱, name: name, widget: string}
+        - {label: 說明, name: desc, widget: text}
+        - *feat
+        - {label: 建議用量, name: qty, widget: string}
+        - {label: 包裝, name: pack, widget: string}
+    - label: 色卡
+      name: swatches
+      widget: list
+      summary: "{{fields.code}} {{fields.name}}"
+      hint: 新增或刪除色卡後，「X 組色系」會自動更新。照片請用正方形
+      fields:
+        - {label: 色號, name: code, widget: string}
+        - {label: 色名, name: name, widget: string}
+        - {label: 色卡照片, name: img, widget: image, media_folder: /assets/img/stone, public_folder: /assets/img/stone}
+    - {label: 施工工序, name: steps, widget: hidden}
+
+  epoxy: &epoxy
+    - {label: 瀏覽器分頁標題, name: title, widget: string}
+    - *desc
+    - *kw
+    - {label: 頁面大標, name: h1, widget: string}
+    - {label: 開頭引言, name: lead, widget: text}
+    - {label: 主圖, name: hero, widget: hidden}
+    - {label: 導言, name: intro, widget: text}
+    - {label: 系統區塊小標, name: series_kick, widget: string}
+    - {label: 系統區塊標題, name: series_h2, widget: string, hint: 系統數量改變時，記得一起改這裡和引言的數字}
+    - {label: 系統區塊說明, name: series_p, widget: text}
+    - label: 系統
+      name: series
+      widget: list
+      summary: "{{fields.name}}"
+      hint: 代號為 primer、body 的兩項是基礎層，不計入系統數量
+      fields:
+        - label: 代號
+          name: id
+          widget: string
+          hint: 英文小寫，作為網址錨點。中英文版要用同一個
+          pattern: ['^[a-z0-9-]+$', '只能用英文小寫、數字與 -']
+        - {label: 名稱, name: name, widget: string}
+        - {label: 小標, name: tag, widget: string}
+        - {label: 說明, name: desc, widget: text}
+        - *feat
+        - {label: 適用場所, name: use, widget: text}
+        - *spec
+    - {label: 常見問題標題, name: faq_h2, widget: string}
+    - label: 常見問題
+      name: faq
+      widget: list
+      summary: "{{fields.q}}"
+      fields:
+        - {label: 問題, name: q, widget: string}
+        - {label: 回答, name: a, widget: text}
+    - {label: 頁尾詢價標題, name: cta_h, widget: string}
+    - {label: 頁尾詢價說明, name: cta_p, widget: text}
+    - {label: 頁尾按鈕文字, name: cta_b, widget: string}
+
+# ─────────── 後台選單 ───────────
+collections:
+  - name: articles_zh
+    label: 技術專欄（中文）
+    label_singular: 文章
+    folder: content/zh/articles
+    format: json
+    extension: json
+    create: true
+    delete: true
+    slug: "{{fields.slug}}"
+    identifier_field: title
+    summary: "{{date}}｜{{title}}"
+    sortable_fields: [date, title]
+    editor: {preview: false}
+    fields: *article
+
+  - name: articles_en
+    label: 技術專欄（英文）
+    label_singular: Article
+    folder: content/en/articles
+    format: json
+    extension: json
+    create: true
+    delete: true
+    slug: "{{fields.slug}}"
+    identifier_field: title
+    summary: "{{date}}｜{{title}}"
+    sortable_fields: [date, title]
+    editor: {preview: false}
+    fields: *article
+
+  - name: products
+    label: 產品資料
+    editor: {preview: false}
+    files:
+      - {label: 防水材料（中文）, name: waterproofing_zh, file: content/zh/waterproofing.json, fields: *waterproofing}
+      - {label: 防水材料（英文）, name: waterproofing_en, file: content/en/waterproofing.json, fields: *waterproofing}
+      - {label: 仿石塗料（中文）, name: stone_zh, file: content/zh/stone.json, fields: *stone}
+      - {label: 仿石塗料（英文）, name: stone_en, file: content/en/stone.json, fields: *stone}
+      - {label: 環氧地坪（中文）, name: epoxy_zh, file: content/zh/epoxy.json, fields: *epoxy}
+      - {label: 環氧地坪（英文）, name: epoxy_en, file: content/en/epoxy.json, fields: *epoxy}
+
+  - name: solutions_zh
+    label: 施作部位頁（中文）
+    label_singular: 頁面
+    folder: content/zh/solutions
+    format: json
+    extension: json
+    create: false
+    delete: false
+    identifier_field: h1
+    summary: "{{h1}}"
+    editor: {preview: false}
+    fields: *solution
+
+  - name: solutions_en
+    label: 施作部位頁（英文）
+    label_singular: Page
+    folder: content/en/solutions
+    format: json
+    extension: json
+    create: false
+    delete: false
+    identifier_field: h1
+    summary: "{{h1}}"
+    editor: {preview: false}
+    fields: *solution
+
+  - name: company
+    label: 公司資訊
+    editor: {preview: false}
+    files:
+      - label: 公司資訊
+        name: company
+        file: content/company.json
+        fields:
+          - {label: 公司名稱（中文）, name: name_zh, widget: string}
+          - {label: 公司名稱（英文）, name: name_en, widget: string}
+          - {label: 統一編號, name: tax_id, widget: string}
+          - {label: 電話 1, name: tel1, widget: string, hint: 格式 02-1234-5678，英文版會自動轉成 +886-2-1234-5678}
+          - {label: 電話 2, name: tel2, widget: string}
+          - {label: 傳真, name: fax, widget: string}
+          - {label: Email（詢價單也會寄到這裡）, name: email, widget: string}
+          - {label: 郵遞區號, name: postcode, widget: string}
+          - {label: 地址（中文，不含郵遞區號）, name: address_zh, widget: string}
+          - {label: 地址（英文，不含郵遞區號與 Taiwan）, name: address_en, widget: string}
+          - {label: 街道（給搜尋引擎）, name: ld_street, widget: string, hint: 例如 榮華路二段67號5樓}
+          - {label: 行政區（給搜尋引擎）, name: ld_district, widget: string}
+          - {label: 縣市（給搜尋引擎）, name: ld_city, widget: string}

@@ -1,0 +1,199 @@
+{
+  "products": [
+    {
+      "name": "Bonding Primer",
+      "desc": "A water-based acrylic primer that seals the substrate and provides adhesion for the coats above. The film has real elongation, moving with minor substrate movement and reducing the risk of delamination.",
+      "feat": [
+        "Bond strength 29.8 kgf/cm²",
+        "Tensile strength 2.7 N/mm², elongation at break 60%",
+        "Water absorption 3.66% — seals and waterproofs",
+        "Water-based, safe and non-toxic"
+      ],
+      "qty": "0.15 kg/m² min.",
+      "pack": "18 kg / pail"
+    },
+    {
+      "name": "Texture Coat",
+      "desc": "A high-build texture layer applied over the primer, forming approx. 1–2 mm of relief in a single pass. It is the base for the multi-colour coat and sets the depth and consistency of the stone texture.",
+      "feat": [
+        "Adhesion 21.1 kgf/cm² standard, 14.6 kgf/cm² after immersion",
+        "Alkali, boiling-water and impact resistant; no cracking under thermal cycling",
+        "Withstands 500 wash cycles",
+        "Single-pass application with a consistent texture"
+      ],
+      "qty": "1 kg/m² min.",
+      "pack": "20 kg / pail"
+    },
+    {
+      "name": "Coloured Topcoat",
+      "desc": "A bright, weather-resistant coloured coat beneath the multi-colour layer. It improves overall opacity and colour depth so the substrate never shows between the stone particles.",
+      "feat": [
+        "Meets CNS 4940 Type 2",
+        "100% opacity in white and light colours",
+        "Withstands 2000 scrub cycles",
+        "Formaldehyde emission 0.12 mg/L"
+      ],
+      "qty": "0.2–0.3 kg/m²",
+      "pack": "18 kg / pail"
+    },
+    {
+      "name": "Multi-Colour Granite Coat",
+      "desc": "Produced using an advanced granulation process, a single product contains five or more distinct colour particles. Sprayed in one pass, the particles merge into a film reproducing the appearance of natural granite, with genuine relief, a coarse tactile finish and rich colour.",
+      "feat": [
+        "Over 90% visual match to natural granite",
+        "Meets CNS 12137",
+        "Water and alkali resistant; withstands 300 scrub cycles",
+        "Chalking grade 1 after 12 months' exposure"
+      ],
+      "qty": "0.9–1.2 kg/m²",
+      "pack": "20 kg / pail"
+    },
+    {
+      "name": "Clear Protective Coat",
+      "desc": "A water-based acrylic resin synthesised with silane, forming a dense, transparent and tough film. Durable against weathering, water and staining, easy to wash down, and gives lasting protection to the stone-effect layers below.",
+      "feat": [
+        "No defects after 6000-hour weathering test",
+        "Acid resistant (5% H₂SO₄, 5% HCl)",
+        "Cross-cut adhesion rating 10",
+        "Available in gloss or matt to suit the design"
+      ],
+      "qty": "0.2 kg/m² min.",
+      "pack": "18 kg / pail"
+    }
+  ],
+  "swatches": [
+    {
+      "code": "HY-101",
+      "name": "Pearl White",
+      "img": "/assets/img/stone/stone-01.jpg"
+    },
+    {
+      "code": "HY-102",
+      "name": "Sesame Grey",
+      "img": "/assets/img/stone/stone-02.jpg"
+    },
+    {
+      "code": "HY-103",
+      "name": "Deep Sea Grey",
+      "img": "/assets/img/stone/stone-03.jpg"
+    },
+    {
+      "code": "HY-104",
+      "name": "Ivory White",
+      "img": "/assets/img/stone/stone-04.jpg"
+    },
+    {
+      "code": "HY-105",
+      "name": "Rose Red",
+      "img": "/assets/img/stone/stone-05.jpg"
+    },
+    {
+      "code": "HY-201",
+      "name": "Snow White",
+      "img": "/assets/img/stone/stone-06.jpg"
+    },
+    {
+      "code": "HY-202",
+      "name": "Light Speckle",
+      "img": "/assets/img/stone/stone-07.jpg"
+    },
+    {
+      "code": "HY-203",
+      "name": "Bluestone Grey",
+      "img": "/assets/img/stone/stone-08.jpg"
+    },
+    {
+      "code": "HY-204",
+      "name": "Warm Sand",
+      "img": "/assets/img/stone/stone-09.jpg"
+    },
+    {
+      "code": "HY-205",
+      "name": "Ochre Speckle",
+      "img": "/assets/img/stone/stone-10.jpg"
+    },
+    {
+      "code": "HY-301",
+      "name": "Salt and Pepper",
+      "img": "/assets/img/stone/stone-11.jpg"
+    },
+    {
+      "code": "HY-302",
+      "name": "Crystal White",
+      "img": "/assets/img/stone/stone-12.jpg"
+    },
+    {
+      "code": "HY-303",
+      "name": "Iron Grey",
+      "img": "/assets/img/stone/stone-13.jpg"
+    },
+    {
+      "code": "HY-304",
+      "name": "Beige Speckle",
+      "img": "/assets/img/stone/stone-14.jpg"
+    },
+    {
+      "code": "HY-305",
+      "name": "Blue Rust",
+      "img": "/assets/img/stone/stone-15.jpg"
+    }
+  ],
+  "steps": [
+    {
+      "step": "1",
+      "name": "Substrate preparation",
+      "desc": "Clean the substrate; level cement residue and uneven areas; fill voids and cracks with resin mortar; abrade surfaces that are too smooth",
+      "tool": "—",
+      "qty": "—",
+      "gap": "—"
+    },
+    {
+      "step": "2",
+      "name": "Bonding primer",
+      "desc": "Water-based acrylic primer applied evenly over the whole surface",
+      "tool": "Roller, spray",
+      "qty": "0.15 kg/m² min.",
+      "gap": "—"
+    },
+    {
+      "step": "3",
+      "name": "Joint masking (optional)",
+      "desc": "Set out joint positions and widths to the shop drawing; use tape that leaves no adhesive and remove it immediately after the stone-effect coat",
+      "tool": "—",
+      "qty": "—",
+      "gap": "—"
+    },
+    {
+      "step": "4",
+      "name": "Texture coat",
+      "desc": "Sprayed in one pass to approx. 1–2 mm with a consistent texture; use the same gun and equipment throughout large areas",
+      "tool": "Dedicated spray gun",
+      "qty": "1 kg/m² min.",
+      "gap": "24H min."
+    },
+    {
+      "step": "5",
+      "name": "Coloured topcoat",
+      "desc": "Mix thoroughly and spray evenly and continuously with a topcoat gun or pressure-pot gun",
+      "tool": "Topcoat or pressure-pot gun",
+      "qty": "0.2–0.3 kg/m²",
+      "gap": "24H min."
+    },
+    {
+      "step": "6",
+      "name": "Multi-colour granite coat",
+      "desc": "May be thinned with a little separating agent or water; restore consistency by gentle rocking or pouring between pails — never mix hard, which breaks the colour particles",
+      "tool": "Dedicated spray gun",
+      "qty": "0.9–1.2 kg/m²",
+      "gap": "24H min."
+    },
+    {
+      "step": "7",
+      "name": "Clear protective coat",
+      "desc": "Spray once the main coat is fully dry, evenly over all surfaces",
+      "tool": "Spray gun",
+      "qty": "0.2 kg/m² min.",
+      "gap": "—"
+    }
+  ]
+}

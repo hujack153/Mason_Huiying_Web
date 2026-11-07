@@ -1,0 +1,124 @@
+{
+  "slug": "waterproofing-material-comparison",
+  "date": "2026-07-23",
+  "title": "Flexible Cement vs PU vs Acrylic Waterproofing: What Actually Differs",
+  "desc": "Comparing Taiwan's three main waterproofing material families: composition, elongation, water resistance, ease of application and best uses.",
+  "kw": "flexible cement waterproofing, PU waterproofing, acrylic waterproofing, waterproofing comparison",
+  "hero": "/assets/img/photo/hero-1.jpg",
+  "lead": "On a quotation these three look almost identical, yet the price can differ by a factor of two or three. They are not a good–better–best ladder. Each suits different conditions, and the expensive one is not automatically the right one.",
+  "sections": [
+    {
+      "h": "The fundamental difference is composition",
+      "p": [
+        "**Flexible cement** is a two-component material: a water-based resin blended on site with inorganic aggregate, usually cement-based. It is essentially cement with elasticity, and it has the best compatibility with concrete substrates because the two are chemically similar.",
+        "**Acrylic waterproofing** is typically single-component and water-based, ready to use from the pail. It is polymer-resin based, sometimes reinforced with anti-crack fibre, and works by forming a continuous elastic film.",
+        "**PU (polyurethane)** comes in water-based and solvent-based forms. Solvent-based PU is a two-part system requiring accurate mixing of base and hardener, curing by chemical reaction. Film strength, elongation and water resistance are generally the best of the three, and so is the price."
+      ]
+    },
+    {
+      "h": "Performance comparison",
+      "table": {
+        "head": [
+          "Property",
+          "Flexible cement",
+          "Acrylic",
+          "Solvent-based PU"
+        ],
+        "rows": [
+          {
+            "cells": [
+              "Composition",
+              "Two-part (resin + aggregate)",
+              "Single-part, water-based",
+              "Two-part (base + hardener)"
+            ]
+          },
+          {
+            "cells": [
+              "Compatibility with concrete",
+              "Best",
+              "Good",
+              "Requires matched primer"
+            ]
+          },
+          {
+            "cells": [
+              "Elongation",
+              "Moderate",
+              "High (400%–1500%)",
+              "High"
+            ]
+          },
+          {
+            "cells": [
+              "Standing water",
+              "Moderate",
+              "Not for prolonged immersion",
+              "Good"
+            ]
+          },
+          {
+            "cells": [
+              "Mechanical strength",
+              "Moderate",
+              "Moderate",
+              "Good"
+            ]
+          },
+          {
+            "cells": [
+              "Application difficulty",
+              "Requires mixing",
+              "Simplest, ready to use",
+              "Highest, needs accurate ratio"
+            ]
+          },
+          {
+            "cells": [
+              "Odour",
+              "None",
+              "None",
+              "Solvent odour"
+            ]
+          },
+          {
+            "cells": [
+              "Unit cost",
+              "Low",
+              "Medium",
+              "High"
+            ]
+          }
+        ]
+      },
+      "p": [
+        "These are typical ranges for each family. Actual performance varies considerably between formulations, so always refer to the individual product test report when specifying."
+      ]
+    },
+    {
+      "h": "Which to use, and when",
+      "p": [],
+      "list": [
+        "**Bathrooms, kitchens and other internal sandwich waterproofing** — flexible cement. Best compatibility with cement substrates, sufficient adhesion for tiling over, and no odour, which matters indoors.",
+        "**General roof and wall membrane waterproofing** — acrylic. Simplest to apply, sensible cost, and enough elongation to absorb thermal movement. This covers most residential roofs in Taiwan.",
+        "**Roofs or car parks that pond water, take foot traffic or see abrasion** — solvent-based PU. The best water resistance and strength of the three; using a cheap material in these conditions is the real waste.",
+        "**Basement retaining walls, positive side** — flexible cement with a crystalline penetrating material. Once backfilled, this cannot be redone, so durability matters far more than ease of application.",
+        "**Roofs with existing cracks or significant movement** — high-elongation acrylic or PU. Only materials above roughly 600% elongation will keep up with crack movement."
+      ]
+    },
+    {
+      "h": "Combining systems is fine — within one family",
+      "p": [
+        "In practice a single material is rarely used alone. Common combinations are flexible cement as the main membrane with an acrylic topcoat for protection and appearance, or a full PU build-up of primer, membrane and topcoat.",
+        "The key is that **each layer must be compatible with the one below**. Solvent-based over water-based, or the reverse, can blister and delaminate due to resin incompatibility. Products within a series are designed to work together; always confirm before crossing between systems."
+      ]
+    },
+    {
+      "h": "Compare total cost, not unit price",
+      "p": [
+        "When comparing material cost, price per kilogram tells you very little. What matters is **cost per square metre** — unit price multiplied by the required coverage rate.",
+        "A cheaper product requiring 2.0 kg/m² can easily cost more in place than a dearer one requiring 0.6 kg/m². Add labour: if system A needs five steps and system B needs three, the difference in programme and manpower often exceeds the material price difference entirely."
+      ]
+    }
+  ]
+}

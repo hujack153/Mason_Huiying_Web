@@ -1,0 +1,88 @@
+# robots.txt — huiyingmaterials.com
+# 暉盈國際事業有限公司
+
+# ---- 預設：全部允許 ----
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+# ---- 一般搜尋引擎 ----
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+
+# ---- AI 搜尋與檢索爬蟲（明確允許）----
+# OpenAI
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin/
+
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+
+# Anthropic
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /admin/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /admin/
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin/
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /admin/
+
+# Google AI（AI Overviews / Gemini）
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin/
+
+# Apple Intelligence
+User-agent: Applebot
+Allow: /
+Disallow: /admin/
+
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /admin/
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+Disallow: /admin/
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+Disallow: /admin/
+
+# Mistral
+User-agent: MistralAI-User
+Allow: /
+Disallow: /admin/
+
+# Common Crawl（多數模型的語料來源）
+User-agent: CCBot
+Allow: /
+Disallow: /admin/
+
+Sitemap: https://huiyingmaterials.com/sitemap.xml
