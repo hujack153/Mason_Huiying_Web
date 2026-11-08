@@ -1,0 +1,223 @@
+{
+  "title": "Epoxy Resin Flooring｜Self-Levelling, Anti-Static, Water-Based Systems｜Huiying",
+  "desc": "Six epoxy flooring systems: thin-build, self-levelling, clear, anti-static, water-based and structural repair, over a shared primer and body coat.",
+  "kw": "epoxy flooring, epoxy resin floor, self-levelling flooring, anti-static flooring, cleanroom flooring, industrial floor coating",
+  "h1": "Epoxy resin flooring systems",
+  "lead": "Six systems over a primer and body coat common to every build-up — specified against the mechanical strength, chemical resistance and cleanliness the facility actually requires.",
+  "hero": "epoxy-06",
+  "intro": "**A floor is a structure, not a coat of paint.** A complete epoxy floor is built in three stages: the **primer** penetrates and seals the substrate and determines whether the system stays down; the **body coat** is the structural layer, providing thickness, flatness and mechanical strength, and it is where overall cost is controlled; the **topcoat** determines appearance, abrasion and chemical resistance, and how easily the floor can be cleaned. Omit any one layer and the other two cannot perform.",
+  "series_kick": "Systems",
+  "series_h2": "Base layers and six systems",
+  "series_p": "Primer and body coat are base layers common to every build-up and are not counted as systems; the six systems that follow are selected or combined according to requirement.",
+  "faq_h2": "Frequently asked questions",
+  "cta_h": "Not sure which system applies?",
+  "cta_p": "Send us the facility type, area, pattern of use and available downtime, and we will return a suitable system and material specification.",
+  "cta_b": "Ask about flooring →",
+  "series": [
+    {
+      "id": "primer",
+      "name": "Primer (base layer)",
+      "tag": "Common to all systems · substrate penetration and sealing",
+      "desc": "An epoxy primer penetrates the concrete substrate, bonds tightly to the base layer and seals the capillary structure, raising the adhesion of the whole floor. Once the substrate is prepared, the primer is roller-applied across the full area before the body coat and topcoat. Solvent-based and solvent-free grades are available according to substrate condition, with a dedicated formulation for low temperatures.",
+      "feat": [
+        "Penetrates and seals capillaries, preventing blistering in the layers above",
+        "Substantially improves adhesion of the system to the base",
+        "General and low-temperature grades available",
+        "High-adhesion grades suit difficult or aged substrates"
+      ],
+      "use": "All cementitious substrates; sealing prior to refurbishment of an existing floor",
+      "spec": [
+        {
+          "k": "Application",
+          "v": "Roller"
+        },
+        {
+          "k": "Position",
+          "v": "First layer, before the body coat"
+        }
+      ]
+    },
+    {
+      "id": "body",
+      "name": "Body coat (base layer)",
+      "tag": "Common to all systems · structural layer",
+      "desc": "The body coat is the structural core of the floor, providing thickness, flatness, mechanical strength and impact resistance. It can be applied in stages to build 1–3 mm, or as a high-filler grade for greater thickness above 4 mm. It is also where overall cost is controlled — thickness is established here rather than by stacking expensive topcoat material.",
+      "feat": [
+        "Improves flatness, thickness and mechanical strength",
+        "Raises impact and abrasion resistance",
+        "Reduces overall material cost",
+        "Colour can be matched close to the topcoat so local wear is less visible"
+      ],
+      "use": "Factories, warehousing and car parks where loading and impact resistance matter",
+      "spec": [
+        {
+          "k": "Thickness",
+          "v": "1–3 mm applied in stages; 4 mm and above with high-filler grades"
+        },
+        {
+          "k": "Position",
+          "v": "After the primer, before the topcoat"
+        }
+      ]
+    },
+    {
+      "id": "thin",
+      "name": "Thin-build topcoat systems",
+      "tag": "The most widely used finish",
+      "desc": "Thin-build topcoats are straightforward to apply, give a smooth attractive finish, offer a wide colour choice and are reasonably priced, making them the most widely used finish. They effectively prevent dusting and suit facilities that want a good appearance without cleanroom standards. Normally roller-applied; on large areas, pot life and labour allocation need planning.",
+      "feat": [
+        "Easy to apply with a short programme",
+        "Wide colour choice; areas can be colour-coded",
+        "Prevents dusting and improves the working environment",
+        "Good abrasion resistance for frequent vehicle and foot traffic"
+      ],
+      "use": "Car parks, general factories, garages, warehousing",
+      "spec": [
+        {
+          "k": "Application",
+          "v": "Roller"
+        },
+        {
+          "k": "Character",
+          "v": "Thin film; the most economical in cost and programme"
+        }
+      ]
+    },
+    {
+      "id": "selfleveling",
+      "name": "Self-levelling systems",
+      "tag": "Seamless smooth finish",
+      "desc": "Self-levelling systems offer excellent adhesion and surface smoothness, high gloss and good water and chemical resistance, forming a seamless monolithic finish. The material must be trowelled evenly in a single operation, with strict control of pot life and labour allocation; large areas must be zoned and planned in advance.",
+      "feat": [
+        "Smooth and seamless, reducing contaminant adhesion",
+        "High gloss and good visual quality",
+        "Good water and chemical resistance",
+        "Easy to clean; suits facilities with high cleanliness requirements"
+      ],
+      "use": "Hospitals, pharmaceutical and electronics plants, food factories, cleanrooms, schools, offices",
+      "spec": [
+        {
+          "k": "Coverage",
+          "v": "Not less than 0.8 kg/m²"
+        },
+        {
+          "k": "Application",
+          "v": "Trowel; requires zoning"
+        }
+      ]
+    },
+    {
+      "id": "clear",
+      "name": "Clear topcoat systems",
+      "tag": "Retains the existing appearance",
+      "desc": "A clear topcoat forms a protective layer over the floor with high gloss, transparency, strength and acid and alkali resistance. It does not alter the appearance beneath, so it suits spaces where the existing floor character is to be retained while adding protection — commonly over terrazzo and decorative floors.",
+      "feat": [
+        "High gloss and transparency; original appearance unchanged",
+        "High strength with acid and alkali resistance",
+        "Protective layer for decorative floors",
+        "Solvent-free grades available"
+      ],
+      "use": "Hotels, residential, design studios, offices, pharmaceutical and food facilities; terrazzo and display spaces",
+      "spec": [
+        {
+          "k": "Application",
+          "v": "Roller or trowel"
+        },
+        {
+          "k": "Position",
+          "v": "Final layer"
+        }
+      ]
+    },
+    {
+      "id": "esd",
+      "name": "Anti-static systems",
+      "tag": "Static charge dissipation",
+      "desc": "An anti-static floor dissipates static charge accumulating at the surface, preventing sparking. The system comprises a conductive primer, anti-static body coat and anti-static topcoat, installed together with an earthed copper foil grid to form a complete conductive path. The materials also provide the gloss, impact, chemical and abrasion performance of a conventional floor.",
+      "feat": [
+        "Dissipates surface static charge and prevents sparking",
+        "Requires an earthed copper foil grid to complete the path",
+        "Combines gloss, impact and chemical resistance",
+        "Trowel or spray grades available"
+      ],
+      "use": "Semiconductor and electronics plants, server rooms, hazardous areas, instrument facilities",
+      "spec": [
+        {
+          "k": "System",
+          "v": "Conductive primer + anti-static body coat + anti-static topcoat + earthed copper grid"
+        },
+        {
+          "k": "Note",
+          "v": "Earthing workmanship directly determines performance"
+        }
+      ]
+    },
+    {
+      "id": "waterborne",
+      "name": "Water-based systems",
+      "tag": "Low odour, environmentally responsible",
+      "desc": "Water-based epoxy flooring is designed as an environmentally responsible option: no VOC, low odour, good appearance and sound cure characteristics. Water-based epoxy is more sensitive to temperature and humidity, so ventilation must be confirmed; application below 10°C is not recommended as it compromises the cure. Mixing must be by powered stirrer and the material used within its pot life.",
+      "feat": [
+        "No VOC and low odour; suits facilities that cannot close for long",
+        "Good appearance and cure characteristics",
+        "Better tolerance of damp conditions",
+        "First choice for basements and poorly ventilated spaces"
+      ],
+      "use": "Food, electronics, pharmaceutical, cosmetics and paper plants; underground car parks and other ventilation-limited spaces",
+      "spec": [
+        {
+          "k": "Temperature",
+          "v": "Not recommended below 10°C"
+        },
+        {
+          "k": "Note",
+          "v": "Confirm adequate ventilation in the work area"
+        }
+      ]
+    },
+    {
+      "id": "repair",
+      "name": "Structural repair products",
+      "tag": "Making good and strengthening",
+      "desc": "Substrate defects must be resolved before flooring is applied. This range covers repair and strengthening materials for cracks, spalling, honeycombing and areas of insufficient local strength. Applying a floor over unresolved substrate defects is one of the most common causes of failure.",
+      "feat": [
+        "Treats cracks, spalling and honeycombing",
+        "Strengthens areas of insufficient local strength",
+        "Essential preparation before the flooring system"
+      ],
+      "use": "Refurbishment works; substrate preparation before floor renewal",
+      "spec": [
+        {
+          "k": "Timing",
+          "v": "Before the flooring system is applied"
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is the difference between epoxy and PU flooring?",
+      "a": "Epoxy offers better hardness, abrasion resistance and chemical resistance, but lower flexibility and less ability to bridge substrate movement than PU. PU floors are more elastic and tolerate thermal movement better, suiting facilities with temperature variation or requiring some resilience, such as cold stores and food plant washdown areas. General factories, car parks and cleanrooms are predominantly epoxy."
+    },
+    {
+      "q": "What condition does the substrate need to be in?",
+      "a": "Three factors: moisture content, flatness and strength. Epoxy is highly sensitive to moisture, and an over-wet substrate leads to blistering and delamination. Dusting surfaces, oil contamination or failed coatings must be ground off or removed. Areas of low strength, cracking or honeycombing should be made good with repair materials first. This preparation takes a significant share of the programme, and cannot be skipped."
+    },
+    {
+      "q": "How thick should the floor be?",
+      "a": "It depends on loading and use. Light office use is served by a thin-build topcoat; factories with forklifts, racking or heavy vehicles need body coat thickness as the priority, built up to 1–3 mm in stages or above 4 mm with high-filler grades. Insufficient thickness leads to crushing or delamination at load points."
+    },
+    {
+      "q": "How long does the facility need to close?",
+      "a": "It depends on the system and area. Thin-build systems have the shortest programme; self-levelling and anti-static systems involve more layers, each requiring cure time, so take longer. In practice work is usually phased so the facility can remain partly operational. Cure times must be built into the programme — compressing intervals to save time is a frequent cause of failure."
+    },
+    {
+      "q": "Our underground car park is poorly ventilated. Is there a suitable material?",
+      "a": "Yes. Water-based epoxy systems have no VOC and low odour, making them the first choice for ventilation-limited spaces. Note that water-based epoxy is more sensitive to temperature and humidity; application below 10°C is not recommended, and ventilation should still be confirmed during installation."
+    },
+    {
+      "q": "Do food plants have particular requirements?",
+      "a": "Food plants are among the most demanding environments, combining hot washdown, fats, organic acids and frequent cleaning. Thermal and chemical resistance specifications should be confirmed explicitly, and a seamless self-levelling system is preferred to reduce contaminant adhesion. Falls to drainage and detailing around gullies should be planned at the same time."
+    }
+  ]
+}

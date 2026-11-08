@@ -1,0 +1,71 @@
+{
+  "slug": "exterior-wall-coating",
+  "photo": "photo/hero-3.jpg",
+  "photocap": "External wall coating",
+  "photono": "PH-08",
+  "nav": "External walls",
+  "title": "Exterior Wall Waterproofing and Coatings｜Elastomeric, Thermal, Stone-Effect｜Huiying",
+  "desc": "Exterior wall waterproofing and decorative coatings: elastomeric topcoats, reflective thermal coatings, clear sealers and stone-effect systems.",
+  "kw": "exterior wall waterproofing, elastomeric coating, thermal reflective coating, stone effect wall coating",
+  "h1": "Exterior wall waterproofing and coatings",
+  "lead": "External walls have to resist rain, ultraviolet light and the thermal movement of the substrate at the same time. Unlike a roof, the waterproofing layer is usually also the visible surface, so performance and appearance have to be satisfied together.",
+  "img": null,
+  "sections": [
+    {
+      "h": "Three requirements, three build-ups",
+      "p": [
+        "**Waterproofing only** — primer plus compound membrane, typically where the wall will later be covered or on secondary elevations.",
+        "**Waterproofing with finish (most common)** — primer, then flexible cement or compound membrane, then an elastomeric topcoat that serves as both protection and finish.",
+        "**High-end finish (stone appearance)** — the full multi-colour stone-effect system of five coats, for projects wanting the appearance of granite without the weight and installation cost of stone."
+      ]
+    },
+    {
+      "h": "Elastomeric topcoat",
+      "p": [
+        "A single-component water-based acrylic polymer with selected pigment, ready to use from the pail. It cures directly after roller application to an elastic, high-strength and durable film with a high sheen.",
+        "Coverage is around 0.2 kg/m² per roller coat; touch dry in 4 hours, recoat at 24 hours. Available in white, grey, beige, green and off-white.",
+        "Elasticity is the critical property — external substrates move with the day-night temperature cycle, and a rigid film will crack along the movement."
+      ]
+    },
+    {
+      "h": "Reflective thermal coating",
+      "p": [
+        "A water-based polymer combined with insulating fillers, achieving 65% or more solar reflectance. Alongside waterproofing it provides thermal, temperature-stabilising and mould-resistant performance, reducing heat gain and cooling load.",
+        "Coverage around 0.8 kg/m² in two coats. Suited to west-facing elevations, metal roofing, corrugated sheeting, steel panels and container units."
+      ]
+    },
+    {
+      "h": "Clear protective coating",
+      "p": [
+        "A transparent layer applied over topcoats or decorative finishes to improve stain and weather resistance. Available in gloss and matt (5–10 GU), at around 0.05–0.1 kg/m².",
+        "Suitable over coated surfaces, exposed aggregate, power-floated cement, board materials and tiling. The film is hydrophobic and dust-shedding with self-cleaning behaviour, extending the interval between redecoration.",
+        "A solvent-based non-yellowing grade is also available, which leaves the original colour of the building unchanged — useful when refurbishing an older building while retaining its existing tone."
+      ]
+    },
+    {
+      "h": "Multi-colour stone-effect coating",
+      "p": [
+        "A water-based multi-colour coating closely reproducing natural granite, formed in a single spray pass with over 90% visual match. A single product carries five or more colour particles that merge on spraying to reproduce the veining and tactile quality of stone.",
+        "The complete system has five coats: bonding primer, texture coat, coloured topcoat, multi-colour granite coat and clear protective coat. Where the elevation is to be divided, joint tape is applied before the texture coat.",
+        "The main coat requires a dedicated spray gun and a correspondingly specified compressor set-up. A single elevation takes around four to six working days from preparation to completion."
+      ],
+      "link": {
+        "text": "See the full system and colour range →",
+        "href": "stone.html"
+      }
+    },
+    {
+      "h": "Site conditions",
+      "p": [],
+      "list": [
+        "The surface must be dry, with moisture content below 10%",
+        "Air temperature above 10°C and relative humidity below 85%",
+        "Make good laitance, honeycombing, cracking, damage and depressions before coating",
+        "Provide protection to prevent overspray affecting surrounding areas",
+        "Colour and texture should be submitted as a sample panel and approved by the client and supervising officer before work proceeds"
+      ]
+    }
+  ],
+  "cta": "External work is best started with a sample panel. Send elevation drawings and areas, and we will return a specification and arrange the panel.",
+  "order": 4
+}

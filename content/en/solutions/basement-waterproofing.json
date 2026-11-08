@@ -1,0 +1,57 @@
+{
+  "slug": "basement-waterproofing",
+  "photo": "photo/hero-2.jpg",
+  "photocap": "Structural wall",
+  "photono": "PH-07",
+  "nav": "Basements",
+  "title": "Basement Waterproofing｜Retaining Walls, Plugging and Crystalline Systems｜Huiying",
+  "desc": "Basement and retaining wall waterproofing: positive vs negative side, plugging mortar and crystalline systems, and fixing existing ingress.",
+  "kw": "basement waterproofing, retaining wall waterproofing, crystalline waterproofing, plugging mortar",
+  "h1": "Basement and retaining wall waterproofing",
+  "lead": "Below-ground waterproofing has one unforgiving characteristic: once backfilled or cast, it is effectively impossible to redo. Durability therefore matters far more here than ease of application.",
+  "img": null,
+  "sections": [
+    {
+      "h": "Positive and negative side are entirely different problems",
+      "p": [
+        "The **positive side** — the external face, where water pressure pushes against the membrane — is the ideal surface to work on. Pressure presses the membrane against the structure, which helps rather than hinders adhesion. This face is normally treated before backfilling, using flexible cement or a compound membrane as the main layer.",
+        "The **negative side** — the internal face, where pressure pushes away from the membrane — is a compromise. Water pressure lifts a conventional film and causes blistering. Here a **crystalline penetrating material** should be the first choice: it does not rely on a surface film, but penetrates the concrete and forms crystals that block the capillary structure, so pressure cannot displace it.",
+        "Most remedial basement work is negative side, which is why simply applying another coat of waterproof paint rarely lasts."
+      ]
+    },
+    {
+      "h": "Sequence for existing ingress",
+      "p": [
+        "**1. Stop the visible leaks.** Running water through cracks, honeycombing or construction joints is treated with plugging mortar — a hydraulic cement compound that sets in 3–5 minutes, does not shrink on curing, contains no metallic constituents so will not rust or expand, and cures under water. 1 kg fills approximately 600 cm³.",
+        "**2. Treat diffuse seepage.** Apply a crystalline waterproofing compound, either trowelled or sprayed; the single-component grade only requires mixing with water. Approximately 1.0 kg/m² per mm of thickness. It remains vapour permeable and protects reinforcement from corrosion.",
+        "**3. Repair surface defects.** Concrete defects, exposed reinforcement and cracks are made good with materials from the same cementitious family for best compatibility.",
+        "**4. Only then consider a finish.** Once the substrate is stable, apply finishes if required. Rushing to the finish and skipping the first three steps is the most common mistake."
+      ]
+    },
+    {
+      "h": "New build",
+      "p": [
+        "On the external positive face before backfilling, a build-up of primer followed by flexible cement or a compound membrane is recommended. Flexible cement offers the best compatibility with concrete, at approximately 1.0 kg/m² horizontal and 0.8 kg/m² vertical per coat.",
+        "Construction joints, cold joints and pipe penetrations should be treated with plugging or sealant materials before the main membrane, with reinforcing mesh where appropriate. These are the principal sources of later ingress."
+      ]
+    },
+    {
+      "h": "Anchors and penetrations",
+      "p": [
+        "Beyond leak stopping, plugging mortar also serves as an anchor fixing material and as a seal around pipe penetrations. Where these details are made good with ordinary cement mortar, shrinkage leaves an annular gap that becomes a water path."
+      ]
+    },
+    {
+      "h": "What to check at handover",
+      "p": [],
+      "list": [
+        "Sufficient observation time after plugging to confirm ingress has stopped, rather than covering immediately",
+        "Actual consumption of crystalline material reconciled against area multiplied by thickness",
+        "Construction joints, cold joints and penetrations treated individually rather than only as part of the main field",
+        "Materials delivered in original packaging with labels stating specification and product code"
+      ]
+    }
+  ],
+  "cta": "Causes of basement ingress vary widely. Send photographs of the current condition and the location of the leaks, and we will help determine the sequence and materials.",
+  "order": 3
+}

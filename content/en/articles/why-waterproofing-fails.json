@@ -1,0 +1,63 @@
+{
+  "slug": "why-waterproofing-fails",
+  "date": "2026-07-27",
+  "title": "Why Waterproofing Fails: Five Common Substrate Preparation Mistakes",
+  "desc": "When a roof leaks again within two years, the material is rarely to blame. Five common substrate preparation mistakes and how to avoid them.",
+  "kw": "waterproofing failure, membrane blistering, substrate preparation, waterproofing defects",
+  "hero": "/assets/img/photo/hero-2.jpg",
+  "lead": "When a roof starts leaking a year or two after being waterproofed, the owner's first assumption is that the material was poor. On inspection, most cases trace back to the same place: the substrate. A membrane is only as good as what it is bonded to.",
+  "sections": [
+    {
+      "h": "Mistake 1: Applying over a substrate that is still too wet",
+      "p": [
+        "This is the most common single cause. A concrete surface can look dry while internal moisture content is still above 15%. Once a water-based membrane goes on, vapour rises, is trapped by the film, accumulates beneath it and eventually lifts the whole sheet.",
+        "**What to do instead:** moisture content should be below 10%; some specifications are stricter. Without a moisture meter, tape a 50 × 50 cm sheet of plastic to the surface, sealed on all four edges, and check the underside the next morning. Condensation means it is still too wet. Newly placed concrete normally needs 28 days of curing."
+      ]
+    },
+    {
+      "h": "Mistake 2: Not removing chalking and failed coatings",
+      "p": [
+        "Older roofs usually carry a layer of chalked cement or an existing membrane that has lost adhesion. New material applied over this bonds to the loose layer, not to the structure, and lifts away in sheets.",
+        "**What to do instead:** wipe the surface firmly with your palm. Visible dust means grinding or high-pressure water cleaning is required first. Blistered or delaminating coatings must be fully removed, not just patched. Where the surface is friable but cannot be fully removed, a high-penetration primer can consolidate it."
+      ]
+    },
+    {
+      "h": "Mistake 3: Coating straight over cracks",
+      "p": [
+        "Structural cracks continue to open and close with temperature. A membrane laid straight over the top is repeatedly stressed along one line and usually splits along that same line within a season or two.",
+        "**What to do instead:** open the crack out with a V-cut, clean it, and fill with a sealant or plugging material. For larger cracks and construction joints, embed a reinforcing mesh (commonly 300 g/m² glass fibre) within the membrane so stress is distributed rather than concentrated."
+      ]
+    },
+    {
+      "h": "Mistake 4: Neglecting terminations and details",
+      "p": [
+        "Leaks rarely begin in the middle of a roof. They begin at parapet junctions, around outlets, at pipe penetrations and movement joints. These represent very little area but are where workmanship most often falls short.",
+        "**What to do instead:** carry the membrane at least 200–300 mm up parapets and terminate it properly; reinforce around outlets; seal pipe penetrations before applying the membrane. Details should be done **first**, then the main field — not patched at the end."
+      ]
+    },
+    {
+      "h": "Mistake 5: Insufficient coverage and inadequate recoat intervals",
+      "p": [
+        "To save time or material, the specified coverage is spread thin, or the next coat goes on before the previous one has dried. A film below the specified thickness will not reach the published elongation or weathering figures; overcoating too early traps solvent or moisture and causes blistering later.",
+        "**What to do instead:** apply at the specified coverage rate and check the arithmetic: area × coverage rate = material required. If site consumption is well below that figure, the film is too thin. Observe the touch-dry and recoat intervals (typically 8–24 hours for water-based products, longer in cold or humid conditions)."
+      ]
+    },
+    {
+      "h": "What to check at handover",
+      "p": [],
+      "list": [
+        "Materials delivered in original packaging, with labels stating specification, brand and product code",
+        "Total material consumed on site reconciled against area multiplied by specified coverage",
+        "Parapet upstand heights, outlets and pipe penetrations detailed correctly",
+        "A 24-hour flood test where the area allows it",
+        "Manufacturer's certificate and test reports available for the record"
+      ]
+    },
+    {
+      "h": "Material is one part of it",
+      "p": [
+        "We supply materials, and we are clear that materials are not the whole job. Before work starts we can provide technical guidance on substrate condition and sequencing, or produce a sample panel for approval. Confirming conditions in advance is considerably cheaper than resolving disputes afterwards."
+      ]
+    }
+  ]
+}

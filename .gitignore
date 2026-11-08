@@ -1,4 +1,7 @@
+# 建置輸出（Cloudflare 部署時重新產生）
+dist/
 __pycache__/
 *.pyc
+node_modules/
+.wrangler/
 .DS_Store
-_build/

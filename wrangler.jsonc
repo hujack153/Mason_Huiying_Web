@@ -1,0 +1,14 @@
+// Cloudflare Workers 設定：網站由 _build/build_all3.py 產生到 dist/，只公開 dist/
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mason-huiying-web",
+  "compatibility_date": "2026-06-15",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  },
+  "workers_dev": true,
+  "preview_urls": true,
+  // 每個分支的預覽環境（npx wrangler preview 需要）；可留空
+  "previews": {}
+}

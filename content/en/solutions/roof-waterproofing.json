@@ -1,0 +1,71 @@
+{
+  "slug": "roof-waterproofing",
+  "photo": "photo/hero-4.jpg",
+  "photocap": "Roof waterproofing",
+  "photono": "PH-05",
+  "nav": "Roof",
+  "title": "Roof Waterproofing Materials｜Flat and Metal Roof Systems｜Huiying",
+  "desc": "Specifying roof waterproofing by substrate, drainage and foot traffic, with build-ups, coverage and recoat intervals for concrete and metal roofs.",
+  "kw": "roof waterproofing materials, flat roof waterproofing, metal roof coating, roof membrane Taiwan",
+  "h1": "Roof waterproofing materials",
+  "lead": "The roof takes the harshest exposure of any part of a building, and accounts for the largest share of waterproofing work. Whether the specification was right usually only becomes visible three years later.",
+  "img": null,
+  "sections": [
+    {
+      "h": "Four things to confirm first",
+      "p": [
+        "There is no universal roof product. These four conditions determine which materials are viable, and they determine the price."
+      ],
+      "list": [
+        "**Substrate and condition** — reinforced concrete, an existing PU or bituminous membrane, or metal sheeting? Is the existing layer chalking, blistering or delaminating?",
+        "**Drainage** — is there a fall to the outlets, and how quickly does water clear? Where water stands for hours, most water-based acrylic products are unsuitable.",
+        "**Foot traffic** — access for maintenance only is very different from regular use, equipment or a drying area.",
+        "**Programme and weather** — water-based materials typically need 8–24 hours between coats. A three-day dry window rules out a five-step system."
+      ]
+    },
+    {
+      "h": "Standard build-up for flat concrete roofs",
+      "p": [
+        "Where the substrate is sound and drainage normal, the standard build-up is three layers:",
+        "**Layer 1｜Primer** — seals and consolidates the substrate. Coverage around 0.05–0.1 kg/m². Use a high-penetration grade on friable or chalked surfaces.",
+        "**Layer 2｜Compound membrane** — normally two coats at 1.0–1.6 kg/m² total, forming a continuous elastic film. Elongation ranges from 400% to 1500% depending on type.",
+        "**Layer 3｜Topcoat** — the layer most often dropped, and the one that blocks UV. Without it the membrane below ages noticeably faster. Where roof temperature is also a concern, a reflective thermal topcoat (65%+ reflectance) at around 0.8 kg/m² in two coats serves both purposes."
+      ]
+    },
+    {
+      "h": "Where there are existing leaks or cracks",
+      "p": [
+        "The sequence reverses — stop the water first, then build the membrane.",
+        "Structural cracks should be opened out, cleaned and filled with sealant or rapid-set plugging mortar. The plugging mortar sets in 3–5 minutes, does not shrink on curing, and stops ingress immediately.",
+        "Diffuse seepage is treated with a crystalline penetrating material, which reacts with the concrete to form crystals that seal pores and micro-cracks. It can be applied to **damp surfaces**, so there is no need to wait for the slab to dry.",
+        "For wider cracks and construction joints, embed a reinforcing mesh (commonly 300 g/m² glass fibre) within the membrane so stress is distributed rather than concentrated along one line."
+      ]
+    },
+    {
+      "h": "Ponding water or greater film thickness",
+      "p": [
+        "Two options: a **heavy-build flexible cement** achieving up to 3 mm in a single application without delamination, at around 1.2 kg/m² per 1 mm on horizontal surfaces; or a **solvent-based PU system** at 2.6–3.9 kg/m², with better water resistance and mechanical strength for trafficked or abraded roofs."
+      ]
+    },
+    {
+      "h": "Metal roofs and corrugated sheeting",
+      "p": [
+        "On metal roofs the leaks are almost always at fastener penetrations, overlaps and corrosion perforations rather than the sheet face. Treat the rust and seal the joints first, then coat.",
+        "Across the sheet face, heat is usually the greater problem. A reflective thermal topcoat measurably lowers internal temperature while also providing waterproofing and mould resistance. Where the structure moves significantly, seal joints with a non-sag sealant before coating."
+      ]
+    },
+    {
+      "h": "Common causes of failure",
+      "p": [],
+      "list": [
+        "Applying over a substrate still above 10% moisture content; new concrete needs 28 days of curing",
+        "Failing to remove chalking and failed coatings — new material bonds to the loose layer and lifts in sheets",
+        "Omitting primer or topcoat — the saving is repaid three to five years later as a full rework",
+        "Insufficient coverage — a thin film will not reach the published elongation or weathering figures",
+        "Poor detailing at parapets, outlets and pipe penetrations — where leaks nearly always begin"
+      ]
+    }
+  ],
+  "cta": "Send us the roof area, substrate condition and expected programme, and we will return a full specification with quantity estimates.",
+  "order": 1
+}

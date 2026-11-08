@@ -1,0 +1,58 @@
+{
+  "slug": "bathroom-waterproofing",
+  "photo": "photo/hero-1.jpg",
+  "photocap": "Residential project",
+  "photono": "PH-06",
+  "nav": "Wet rooms",
+  "title": "Bathroom Waterproofing Materials｜Wet Room and Kitchen Systems｜Huiying",
+  "desc": "Specifying waterproofing for bathrooms and kitchens: flexible cement coverage rates, application sequence, detailing and what to check before tiling.",
+  "kw": "bathroom waterproofing, wet room waterproofing, kitchen waterproofing, flexible cement",
+  "h1": "Bathroom and kitchen waterproofing",
+  "lead": "Internal wet areas are small in area but generate a disproportionate share of problems, because almost all of the work is detailing: gullies, penetrations, corners, thresholds. Once water reaches the floor below, the cost of putting it right far exceeds the original material cost.",
+  "img": null,
+  "sections": [
+    {
+      "h": "Why flexible cement suits internal wet areas",
+      "p": [
+        "Flexible cement is a two-component material: a water-based resin blended on site with inorganic aggregate, usually cement-based. It is essentially cement with elasticity, and its compatibility with concrete substrates is the best of any waterproofing family.",
+        "Three practical considerations matter indoors: **no solvent odour**, so no extended ventilation; **tiles can be laid directly over it**, with sufficient adhesion; and **sensible cost** for areas that are small but demand reliability."
+      ]
+    },
+    {
+      "h": "Standard sequence",
+      "p": [
+        "**1. Substrate preparation** — remove laitance, level uneven areas, and clear oil, dust, debris and organic growth. Moisture content below 10%.",
+        "**2. Details first** — treat gully surrounds, pipe penetrations and internal corners with sealant or reinforcing mesh before the main field, not afterwards.",
+        "**3. Primer** — apply a water-based primer evenly to consolidate and seal the substrate, around 0.1 kg/m².",
+        "**4. Flexible cement** — approximately 1.0 kg/m² horizontal and 0.8 kg/m² vertical per coat. Carry the membrane at least 300 mm up walls, and to 1800 mm or above within shower enclosures. Touch dry in about 1 hour; allow at least 1 hour between coats.",
+        "**5. Flood test** — carry out a 24-hour flood test on completion and confirm there is no ingress before following trades proceed."
+      ]
+    },
+    {
+      "h": "When to use the heavy-build grade",
+      "p": [
+        "Where greater film thickness is required in a single pass, the heavy-build flexible cement achieves up to 3 mm without delamination, at around 1.2 kg/m² per 1 mm horizontally and 0.6 kg/m² per 0.5 mm vertically. It suits poorer substrates, or where levelling and waterproofing are combined."
+      ]
+    },
+    {
+      "h": "Dealing with an existing leak",
+      "p": [
+        "A bathroom that is already leaking cannot be resolved by recoating the surface. Ingress through cracks or joints should first be treated by **injection** — a water-based acrylic injection material replaces solvent-based foaming grades, is ready to use, fast-curing, highly elastic and does not remain tacky once dry.",
+        "Diffuse seepage is treated with a **crystalline penetrating material**, which can be applied to damp surfaces and reacts with the concrete to seal pores. One unit applied in two coats covers approximately 25–33 m² at 1–1.5 mm thickness."
+      ]
+    },
+    {
+      "h": "Detailing decides the outcome",
+      "p": [],
+      "list": [
+        "**Gully surrounds** — the membrane must be carried into the drain body itself; this is the single most common leak path",
+        "**Pipe penetrations** — seal the annulus between pipe and slab before applying the membrane",
+        "**Internal corners** — form a cove or add reinforcing mesh to avoid stress concentration at the right angle",
+        "**Thresholds** — carry the membrane beyond the threshold and terminate it properly",
+        "**Around baths** — confirm the bath position first; the membrane must extend beneath it"
+      ]
+    }
+  ],
+  "cta": "Tell us the area, floor level and whether this is new work or an existing leak, and we will return a specification with quantities.",
+  "order": 2
+}
