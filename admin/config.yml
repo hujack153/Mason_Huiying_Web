@@ -5,7 +5,7 @@ backend:
   name: github
   repo: hujack153/Mason_Huiying_Web
   branch: main
-  # GitHub 登入用的 OAuth 中介（Cloudflare Worker），部署後把網址填在這裡
+  # 密碼登入程式（cms-auth/，部署成 Cloudflare Worker），部署後把網址填在這裡
   base_url: https://huiying-cms-auth.REPLACE_ME.workers.dev
   commit_messages:
     create: "後台新增：{{collection}}「{{slug}}」"
@@ -16,6 +16,9 @@ backend:
 
 # 存檔後先進「草稿 → 審核中 → 可發布」，每筆修改是一個 PR，有預覽網址；按「發布」才上線
 publish_mode: editorial_workflow
+
+# 本機測試：在自己電腦執行 npx decap-server 後，打開 http://localhost:8080/admin/ 不需登入
+local_backend: true
 
 locale: zh_Hant
 site_url: https://huiyingmaterials.com
