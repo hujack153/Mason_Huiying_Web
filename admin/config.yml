@@ -5,8 +5,9 @@ backend:
   name: github
   repo: hujack153/Mason_Huiying_Web
   branch: main
-  # 密碼登入程式（cms-auth/，部署成 Cloudflare Worker），部署後把網址填在這裡
-  base_url: https://huiying-cms-auth.REPLACE_ME.workers.dev
+  # 密碼登入：網站本身的 /auth（程式在 cms-auth/worker.js）
+  base_url: https://huiyingmaterials.com
+  auth_endpoint: auth
   commit_messages:
     create: "後台新增：{{collection}}「{{slug}}」"
     update: "後台修改：{{collection}}「{{slug}}」"

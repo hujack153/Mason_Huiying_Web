@@ -1,9 +1,0 @@
-// 後台密碼登入的 Worker（與網站分開部署）
-{
-  "name": "huiying-cms-auth",
-  "main": "worker.js",
-  "compatibility_date": "2026-06-15",
-  "vars": {
-    "ALLOWED_ORIGINS": "https://huiyingmaterials.com, *.workers.dev"
-  }
-}

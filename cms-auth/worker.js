@@ -1,5 +1,5 @@
 /**
- * 暉盈官網後台的密碼登入（Cloudflare Worker）
+ * 網站的 Worker：/auth 是後台的密碼登入，其餘網址都直接回傳 dist/ 的靜態網頁。
  *
  * 取代 GitHub OAuth：使用者輸入共用密碼，通過後把一把只能存取網站 repo 的
  * GitHub 金鑰交給後台（Decap CMS），後台再用它存檔、開 PR、發布。
@@ -22,7 +22,7 @@ export default {
       if (request.method === "POST") return handleLogin(request, env);
       return html(loginPage(""));
     }
-    return new Response("Not found", { status: 404 });
+    return env.ASSETS.fetch(request);
   },
 };
 
