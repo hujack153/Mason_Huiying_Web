@@ -8,5 +8,7 @@
     "not_found_handling": "404-page"
   },
   "workers_dev": true,
-  "preview_urls": true
+  "preview_urls": true,
+  // 每個分支的預覽環境（npx wrangler preview 需要）；可留空
+  "previews": {}
 }
