@@ -31,7 +31,7 @@ https://huiyingmaterials.com
 
 1. 在 https://huiyingmaterials.com/admin 用 GitHub 帳號登入，修改後按「儲存」。
 2. 每筆修改會自動開一個 PR，Cloudflare 會建置出預覽網址（貼在 PR 裡）。
-3. 在後台「作業流程」把狀態改成「可發布」，任何有權限的人按「發布」即合併到 `main` 並上線。
+3. 確認預覽沒問題後，把狀態改成「可發布」再按「發布」，就會合併到 `main` 並上線。不需要別人審核，有權限的人都可以自己發布。
 
 直接改程式時，同樣請開分支、發 PR，不要直接推到 `main`。
 
