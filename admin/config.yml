@@ -8,6 +8,7 @@ backend:
   # 密碼登入：網站本身的 /auth（程式在 cms-auth/worker.js）
   base_url: https://huiyingmaterials.com
   auth_endpoint: auth
+  use_graphql: true
   commit_messages:
     create: "後台新增：{{collection}}「{{slug}}」"
     update: "後台修改：{{collection}}「{{slug}}」"
@@ -15,8 +16,7 @@ backend:
     uploadMedia: "後台上傳圖片：{{path}}"
     deleteMedia: "後台刪除圖片：{{path}}"
 
-# 存檔後先進「草稿 → 審核中 → 可發布」，每筆修改是一個 PR，有預覽網址；按「發布」才上線
-publish_mode: editorial_workflow
+# 按「發布」直接存進 main 並上線（約 1 分鐘）；上線前請看編輯畫面右側的即時預覽
 
 # 本機測試：在自己電腦執行 npx decap-server 後，打開 http://localhost:8080/admin/ 不需登入
 local_backend: true
@@ -60,6 +60,7 @@ _fields:
     label: 段落
     name: sections
     widget: list
+    minimize_collapsed: true
     summary: "{{fields.h}}"
     fields:
       - {label: 小標題, name: h, widget: string}
@@ -140,6 +141,7 @@ _fields:
     - label: 產品系列
       name: series
       widget: list
+      minimize_collapsed: true
       summary: "{{fields.name}}"
       hint: 新增或刪除系列後，首頁與關於頁的「X 大系列」會自動更新
       fields:
@@ -159,6 +161,7 @@ _fields:
     - label: 塗層產品
       name: products
       widget: list
+      minimize_collapsed: true
       summary: "{{fields.name}}"
       hint: 塗層順序由下（底漆）到上（面塗）。若增減塗層，頁面上的剖面圖需請工程師更新
       fields:
@@ -170,6 +173,7 @@ _fields:
     - label: 色卡
       name: swatches
       widget: list
+      minimize_collapsed: true
       summary: "{{fields.code}} {{fields.name}}"
       hint: 新增或刪除色卡後，「X 組色系」會自動更新。照片請用正方形
       fields:
@@ -192,6 +196,7 @@ _fields:
     - label: 系統
       name: series
       widget: list
+      minimize_collapsed: true
       summary: "{{fields.name}}"
       hint: 代號為 primer、body 的兩項是基礎層，不計入系統數量
       fields:
@@ -210,6 +215,7 @@ _fields:
     - label: 常見問題
       name: faq
       widget: list
+      minimize_collapsed: true
       summary: "{{fields.q}}"
       fields:
         - {label: 問題, name: q, widget: string}
@@ -232,7 +238,6 @@ collections:
     identifier_field: title
     summary: "{{date}}｜{{title}}"
     sortable_fields: [date, title]
-    editor: {preview: false}
     fields: *article
 
   - name: articles_en
@@ -247,12 +252,10 @@ collections:
     identifier_field: title
     summary: "{{date}}｜{{title}}"
     sortable_fields: [date, title]
-    editor: {preview: false}
     fields: *article
 
   - name: products
     label: 產品資料
-    editor: {preview: false}
     files:
       - {label: 防水材料（中文）, name: waterproofing_zh, file: content/zh/waterproofing.json, fields: *waterproofing}
       - {label: 防水材料（英文）, name: waterproofing_en, file: content/en/waterproofing.json, fields: *waterproofing}
@@ -271,7 +274,6 @@ collections:
     delete: false
     identifier_field: h1
     summary: "{{h1}}"
-    editor: {preview: false}
     fields: *solution
 
   - name: solutions_en
@@ -284,7 +286,6 @@ collections:
     delete: false
     identifier_field: h1
     summary: "{{h1}}"
-    editor: {preview: false}
     fields: *solution
 
   - name: company

@@ -6,15 +6,22 @@
   <meta name="robots" content="noindex, nofollow">
   <title>暉盈官網後台</title>
   <link rel="icon" href="/favicon.ico">
+  <style>
+    /* 隱藏第三方標誌（登入頁下方的 Decap 標誌） */
+    a[href*="decapcms.org"] { display: none !important; }
+  </style>
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@3.17.1/dist/decap-cms.js"></script>
+  <script src="/admin/preview.js"></script>
   <script>
-    // 登入改用密碼（/auth），把按鈕上的「GitHub」字樣換掉，避免誤會
+    // 登入改用密碼（/auth）：按鈕換成「用密碼登入」並拿掉 GitHub 圖示
     new MutationObserver(function () {
       document.querySelectorAll("button").forEach(function (b) {
         if (/GitHub/.test(b.textContent) && !b.dataset.relabeled) {
           b.dataset.relabeled = "1";
+          var svg = b.querySelector("svg");
+          if (svg) svg.remove();
           b.lastChild.textContent = "用密碼登入";
         }
       });

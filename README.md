@@ -20,7 +20,8 @@ https://huiyingmaterials.com
 │   ├── content.py           讀取 content/，處理 **粗體**、代號、數量
 │   ├── build_all*.py · layout2.py · figures.py
 │   ├── robots_template.txt · llms_template.txt
-├── admin/                   後台（Decap CMS）：index.html、config.yml
+├── admin/                   後台（Decap CMS）：index.html、config.yml、preview.js（即時預覽）
+├── cms-auth/worker.js       網站的 Worker：/auth 密碼登入，其餘網址回傳 dist/
 ├── assets/                  CSS、JS、字型、圖片（後台上傳的圖在 assets/img/uploads/）
 ├── static/                  原樣複製到 dist/ 的檔案：favicon、manifest、_headers
 ├── wrangler.jsonc           Cloudflare Workers 設定（公開目錄 dist/）
@@ -29,11 +30,11 @@ https://huiyingmaterials.com
 
 ## 修改流程
 
-1. 在 https://huiyingmaterials.com/admin 用 GitHub 帳號登入，修改後按「儲存」。
-2. 每筆修改會自動開一個 PR，Cloudflare 會建置出預覽網址（貼在 PR 裡）。
-3. 確認預覽沒問題後，把狀態改成「可發布」再按「發布」，就會合併到 `main` 並上線。不需要別人審核，有權限的人都可以自己發布。
+1. 打開 https://huiyingmaterials.com/admin ，按「用密碼登入」，輸入後台密碼。
+2. 修改內容時，右半邊會用網站的樣式即時預覽。
+3. 確認後按「發布」→「立即發布」，修改直接存進 `main`，約 1 分鐘後網站更新。
 
-直接改程式時，同樣請開分支、發 PR，不要直接推到 `main`。
+改程式時直接推到 `main` 即可（推了就上線）。
 
 ## 本機建置
 
@@ -51,4 +52,4 @@ python3 -m http.server -d dist    # http://localhost:8000
 - 仿石塗層增減時，`_build/figures.py` 的剖面圖要手動更新。
 - 文章中英文版用相同檔名對應。只有單一語言時，另一語言的切換連結會指向該語言的專欄列表。
 - 非 `main` 分支的建置（`WORKERS_CI_BRANCH` 不是 `main`）會自動整站加上 `noindex`，`robots.txt` 擋全站。
-- `/admin/` 以 `noindex` 標頭、`robots.txt` 排除，並應以 Cloudflare Access 限制存取。
+- `/admin/` 以 `noindex` 標頭、`robots.txt` 排除。登入密碼與 GitHub 金鑰是 Cloudflare 上的 Secret：`ADMIN_PASSWORD`、`GITHUB_TOKEN`（`hujack153` 建立的 fine-grained token，只授權本 repo，Contents 讀寫）。
