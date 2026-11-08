@@ -3,9 +3,17 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "mason-huiying-web",
   "compatibility_date": "2026-06-15",
+  // /auth（後台密碼登入）由程式處理，其餘都是 dist/ 的靜態網頁
+  "main": "cms-auth/worker.js",
   "assets": {
     "directory": "./dist",
-    "not_found_handling": "404-page"
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/auth", "/callback"]
+  },
+  // 後台登入可使用的網站（預覽網址在 *.workers.dev）；密碼與 GitHub 金鑰設為 Secret
+  "vars": {
+    "ALLOWED_ORIGINS": "https://huiyingmaterials.com, *.workers.dev"
   },
   "workers_dev": true,
   "preview_urls": true,

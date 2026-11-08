@@ -9,5 +9,16 @@
 </head>
 <body>
   <script src="https://unpkg.com/decap-cms@3.17.1/dist/decap-cms.js"></script>
+  <script>
+    // 登入改用密碼（/auth），把按鈕上的「GitHub」字樣換掉，避免誤會
+    new MutationObserver(function () {
+      document.querySelectorAll("button").forEach(function (b) {
+        if (/GitHub/.test(b.textContent) && !b.dataset.relabeled) {
+          b.dataset.relabeled = "1";
+          b.lastChild.textContent = "用密碼登入";
+        }
+      });
+    }).observe(document.body, { childList: true, subtree: true });
+  </script>
 </body>
 </html>
