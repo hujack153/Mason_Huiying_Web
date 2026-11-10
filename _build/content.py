@@ -4,6 +4,7 @@
 後台存的是一般人看得懂的格式（**粗體**、{k,v} 物件），這裡轉回 HTML 與 tuple。
 """
 import os, re, json, glob
+from html import escape
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 C = os.path.join(ROOT, "content")
@@ -26,6 +27,30 @@ def inline(x):
 
 def _spec(items):
     return [(i["k"], i["v"]) for i in items or []]
+
+
+def plain_text(value):
+    # Keep editor text separate from the generator's %%TOKEN%% substitutions.
+    return escape(value).replace("%", "&#37;")
+
+
+def waterproofing_series(items):
+    series = []
+    for item in items:
+        if item.get("archived", False):
+            continue
+        fields = {
+            key: inline(plain_text(item[key]))
+            for key in ("name", "tagline", "desc", "use")
+            if key in item
+        }
+        fields["feat"] = [inline(plain_text(value)) for value in item["feat"]]
+        fields["spec"] = [
+            (inline(plain_text(key)), inline(plain_text(value)))
+            for key, value in _spec(item.get("spec"))
+        ]
+        series.append(dict(fields, id=plain_text(item["id"])))
+    return series
 
 
 def _src(path):
@@ -63,12 +88,13 @@ def _published(d):
 
 COMPANY = _load("company.json")
 
-DATA, EPOXY, ARTICLES, SOLUTIONS = {}, {}, {}, {}
+DATA, EPOXY, ARTICLES, SOLUTIONS, HOME_COPY = {}, {}, {}, {}, {}
 for lang in ("zh", "en"):
+    HOME_COPY[lang] = _load(f"{lang}/home.json")
     wp = _load(f"{lang}/waterproofing.json")
     st = _load(f"{lang}/stone.json")
     DATA[lang] = {
-        "SERIES": [dict(inline(s), spec=_spec(s.get("spec"))) for s in wp["series"]],
+        "SERIES": waterproofing_series(wp["series"]),
         "STONE_PRODUCTS": inline(st["products"]),
         "STONE_SWATCHES": [dict(s, img=_src(s["img"])) for s in st["swatches"]],
         "STONE_SYSTEM": inline(st.get("steps", [])),
@@ -117,8 +143,9 @@ def _en(n):
     return _EN_NUM[n] if n < len(_EN_NUM) else str(n)
 
 
-def _counts():
-    n_wp = len(DATA["zh"]["SERIES"])
+def _counts(n_wp=None):
+    if n_wp is None:
+        n_wp = len(DATA["zh"]["SERIES"])
     n_sw = len(DATA["zh"]["STONE_SWATCHES"])
     n_epx = len([s for s in EPOXY["zh"]["series"] if s["id"] not in ("primer", "body")])
     out = {}
@@ -130,7 +157,7 @@ def _counts():
     return out
 
 
-def tokens():
+def tokens(n_wp=None):
     """產生器原始碼與範本裡的 %%代號%% → 實際值"""
     c = COMPANY
     intl = lambda t: "+886-" + t[1:] if t.startswith("0") else t
@@ -142,12 +169,12 @@ def tokens():
         "ADDR_EN_FULL": f'{c["address_en"]} {c["postcode"]}, Taiwan', "ADDR_EN": f'{c["address_en"]}, Taiwan',
         "POSTCODE": c["postcode"], "LD_STREET": c["ld_street"], "LD_DISTRICT": c["ld_district"], "LD_CITY": c["ld_city"],
     }
-    t.update(_counts())
+    t.update(_counts(n_wp))
     return t
 
 
-def fill(text):
-    for k, v in tokens().items():
+def fill(text, *, n_wp=None):
+    for k, v in tokens(n_wp).items():
         text = text.replace(f"%%{k}%%", v)
     left = re.findall(r"%%[A-Za-z_]+%%", text)
     if left:

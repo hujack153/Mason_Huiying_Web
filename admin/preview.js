@@ -120,8 +120,8 @@
   function Waterproofing(L) {
     return createClass({
       render: function () {
-        var s = this.props.entry.getIn(["data", "series"]);
-        var cnt = list(s).length;
+        var s = list(this.props.entry.getIn(["data", "series"])).filter(function (item) { return !item.archived; });
+        var cnt = s.length;
         var html = '<section class="band"><div class="page"><div class="cap"><h2>' +
           (L === ZH ? "共 " + cnt + " 個系列" : cnt + " series") + "</h2></div>" +
           seriesRows(s, L) + "</div></section>";

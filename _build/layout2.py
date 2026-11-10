@@ -204,7 +204,7 @@ def foot(lang, depth=0):
 </html>'''
 
 
-def hero(lang, *, photo, h1, lead, tag=None, figure=None, acts=None, sub=False):
+def hero(lang, *, photo, h1, lead, tag=None, figure=None, acts=None, sub=False, editable=False):
     """深色滿版大圖版頭。sub=True 用於次要頁面：固定框高，讓底圖在
        各產品線／部位頁一律等大，不受標題行數或剖面圖層數影響。"""
     right = f'<div>{figure}</div>' if figure else ""
@@ -213,9 +213,11 @@ def hero(lang, *, photo, h1, lead, tag=None, figure=None, acts=None, sub=False):
         a = '<div class="acts">' + "".join(
             f'<a class="btn {c}" href="{h}">{l}</a>' for l, h, c in acts) + '</div>'
     tg = f'<span class="tag">{tag}</span>\n      ' if tag else ""
+    title_key = ' data-edit-key="h1"' if editable else ""
+    lead_key = ' data-edit-key="lead"' if editable else ""
     inner = f'''<div>
-      {tg}<h1>{h1}</h1>
-      <p class="lead">{lead}</p>{a}
+      {tg}<h1{title_key}>{h1}</h1>
+      <p class="lead"{lead_key}>{lead}</p>{a}
     </div>{right}'''
     wrap = "hero-2col" if figure else ""
     cls = "hero sub" if sub else "hero"

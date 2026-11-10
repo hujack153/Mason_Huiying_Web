@@ -156,6 +156,7 @@ _fields:
         - *feat
         - {label: 適用部位, name: use, widget: text}
         - *spec
+        - {label: 下架, name: archived, widget: boolean, required: false, default: false}
 
   stone: &stone
     - label: 塗層產品

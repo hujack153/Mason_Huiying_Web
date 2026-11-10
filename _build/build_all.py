@@ -11,7 +11,7 @@ OUT = os.path.join(ROOT, "dist")
 # Cloudflare Workers Builds 會帶入 WORKERS_CI_BRANCH；本機建置沒有這個變數，視為正式版
 BRANCH = os.environ.get("WORKERS_CI_BRANCH", "main")
 PREVIEW = BRANCH != "main"
-from content import DATA, fill  # 內容來自 content/（後台編輯）
+from content import DATA, HOME_COPY, fill, plain_text  # 內容來自 content/（後台編輯）
 
 
 def ld(*objs):
@@ -87,8 +87,6 @@ HOME = {
    title="暉盈國際事業有限公司｜防水材料、外牆仿石塗料、環氧樹脂地坪供應商",
    desc="暉盈國際事業有限公司位於新北市新莊區，供應建築防水材料、外牆多彩仿石塗料與環氧樹脂地坪系統，提供材料選配、樣板施作與現場技術支援。電話 %%TEL1%%。",
    kw="防水材料, 外牆仿石塗料, 環氧樹脂地坪, 建材供應商, 新莊 防水材料",
-   h1="為每一個工程，<br>配出對的材料",
-   lead="從素地封閉、主防水層到面漆保護，我們提供完整的系統配套與技術支援，協助營造、設計與施工單位順利施作。",
    slide_a=("標準三層構成", "五層塗裝結構", "地坪三層構成"),
    slide_s=("防水材料", "仿石塗料", "環氧地坪"),
    lines_no="產品線", lines_h2="三條產品線", lines_p="防水、外牆塗裝與地坪系統，分別對應不同工程條件。",
@@ -119,8 +117,6 @@ HOME = {
    title="Huiying Int'l Business Co.｜Waterproofing, Stone-Effect Coating, Epoxy Flooring｜Taiwan",
    desc="Taiwan supplier of waterproofing materials, stone-effect wall coatings and epoxy flooring. Specification, sample panels and on-site support.",
    kw="waterproofing materials Taiwan, stone effect coating, epoxy flooring Taiwan, building materials supplier",
-   h1="The right specification, for every project",
-   lead="From substrate sealing through to the protective topcoat, we provide complete system specifications and the technical support to install them correctly.",
    slide_a=("Standard three-layer build-up", "Five-layer coating build-up", "Three-stage floor build-up"),
    slide_s=("Waterproofing", "Stone coating", "Epoxy flooring"),
    lines_no="Product lines", lines_h2="Three product lines",
@@ -153,7 +149,12 @@ HOME = {
 
 
 def build_home(lang):
+    write(pfx(lang) + "index.html", render_home(lang))
+
+
+def render_home(lang, *, copy=None):
     t, C, up = T[lang], HOME[lang], pfx(lang)
+    copy = HOME_COPY[lang] if copy is None else copy
     d = dep(lang)
     u = "../" if lang == "en" else ""
     path = "/en/" if lang == "en" else "/"
@@ -209,7 +210,8 @@ def build_home(lang):
          titleblock(lang, "index.html"),
          masthead(lang, "index.html", depth=d),
          hero(lang, photo=f'{u}assets/img/photo/hero-2.jpg',
-              h1=C["h1"], lead=C["lead"], figure=slider,
+              h1="<br>".join(map(plain_text, copy["h1"].splitlines())),
+              lead=plain_text(copy["lead"]), figure=slider, editable=True,
               acts=[(C["lines"][0][1], u + C["lines"][0][3], "rev"),
                     (T[lang]["ask"][0], u + "contact.html", "ghost")]),
          f'''
@@ -235,7 +237,7 @@ def build_home(lang):
 </section>''',
          ask_band(lang, depth=d),
          foot(lang, depth=d)]
-    write(up + "index.html", uniq_svg_ids("\n".join(o)))
+    return uniq_svg_ids("\n".join(o))
 
 
 # ══════════════════════════════════════════ 產品線頁（防水／環氧）
@@ -248,7 +250,7 @@ PROD = {
      kw="防水材料, 屋頂防水, 彈性水泥, PU防水, 滲透結晶防水材",
      tag="材料明細", h1="建築防水材料", lead="%%N_WP_ZH%%大系列。從素地封閉、主防水層、彈性水泥到面漆保護與 PU 系統，依部位與基材選出完整配套。",
      figcap="標準三層構成", figcode="大樣 A-01", fig=F.fig_roof,
-     cap_no="系列明細", cap_h2="%%N_WP_ZH%%大系列", cap_p="前三項構成主要的防水層次，後四項依部位與既有狀況搭配。",
+     cap_no="系列明細", cap_h2="%%N_WP_ZH%%大系列", cap_p="依施作部位與基材狀況選擇適合的材料。",
      h5a="產品特性", h5b="適用部位", h5c="參考規格",
      photo=("assets/img/photo/hero-4.jpg", "屋頂防水施作", "PH-11"),
      faq_h="常見問題"),
@@ -260,7 +262,7 @@ PROD = {
      lead="%%N_WP_EN%% series, from substrate sealing and the main membrane through to topcoat protection and full PU systems.",
      figcap="Standard three-layer build-up", figcode="Detail A-01", fig=F.fig_roof,
      cap_no="Schedule", cap_h2="%%N_WP_EN%% series",
-     cap_p="The first three form the principal build-up; the remaining four are selected by location and existing condition.",
+     cap_p="Select materials to suit the application and the condition of the substrate.",
      h5a="Characteristics", h5b="Applications", h5c="Reference",
      photo=("assets/img/photo/hero-4.jpg", "Roof waterproofing", "PH-11"),
      faq_h="Frequently asked questions"),
@@ -339,10 +341,14 @@ def series_rows(lang, series, h5a, h5b, h5c):
 
 
 def build_waterproofing(lang):
+    write(pfx(lang) + "waterproofing.html", render_waterproofing(lang))
+
+
+def render_waterproofing(lang, *, series=None):
     C = PROD["waterproofing"][lang]
     d, u, up = dep(lang), ("../" if lang == "en" else ""), pfx(lang)
     path = f"/{up}waterproofing.html"
-    series = DATA[lang]["SERIES"]
+    series = DATA[lang]["SERIES"] if series is None else series
     jump = "".join(f'<a href="#{s["id"]}">{s["name"]}</a>' for s in series)
     src, cap, code = C["photo"]
 
@@ -365,4 +371,4 @@ def build_waterproofing(lang):
          qa_block(FAQ_WP[lang], C["faq_h"]),
          ask_band(lang, depth=d),
          foot(lang, depth=d)]
-    write(up + "waterproofing.html", "\n".join(o))
+    return "\n".join(o)
