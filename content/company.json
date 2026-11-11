@@ -1,15 +1,15 @@
 {
-  "name_zh": "暉盈國際事業有限公司",
-  "name_en": "Huiying Int'l Business Co.",
+  "name_zh": "暉盈國際事業有限公司1",
+  "ld_street": "榮華路二段67號5樓",
+  "postcode": "24253",
   "tax_id": "95431021",
+  "ld_city": "新北市",
+  "address_en": "5F, No. 67, Sec. 2, Ronghua Rd., Xinzhuang Dist., New Taipei City",
+  "ld_district": "新莊區",
   "tel1": "02-8521-9356",
   "tel2": "02-8521-9359",
-  "fax": "02-8521-9279",
-  "email": "huiying1215888@gmail.com",
-  "postcode": "24253",
   "address_zh": "新北市新莊區榮華路二段 67 號 5F",
-  "address_en": "5F, No. 67, Sec. 2, Ronghua Rd., Xinzhuang Dist., New Taipei City",
-  "ld_street": "榮華路二段67號5樓",
-  "ld_district": "新莊區",
-  "ld_city": "新北市"
+  "email": "huiying1215888@gmail.com",
+  "name_en": "Huiying Int'l Business Co.",
+  "fax": "02-8521-9279"
 }
