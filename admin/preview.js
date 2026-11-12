@@ -32,6 +32,19 @@
     ]);
   }
 
+  var Home = createClass({
+    render: function () {
+      var d = this.props.entry.get("data");
+      var title = esc(d.get("h1")).replace(/\r?\n/g, "<br>");
+      return view(
+        '<div class="hero"><img src="/assets/img/photo/hero-2.jpg" alt="">' +
+        '<div class="page"><h1>' + title + '</h1><p class="lead">' +
+        esc(d.get("lead")) + "</p></div></div>",
+        "首頁文字預覽。請確認中文與英文內容，再按發布。"
+      );
+    },
+  });
+
   // ── 文章、施作部位頁共用的段落（§ 1.0、§ 1.1 …）
   function sections(secs) {
     var out = "";
@@ -183,6 +196,8 @@
   }
 
   CMS.registerPreviewTemplate("articles_zh", Article);
+  CMS.registerPreviewTemplate("home_zh", Home);
+  CMS.registerPreviewTemplate("home_en", Home);
   CMS.registerPreviewTemplate("articles_en", Article);
   CMS.registerPreviewTemplate("solutions_zh", Solution);
   CMS.registerPreviewTemplate("solutions_en", Solution);

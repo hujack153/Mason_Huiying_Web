@@ -227,6 +227,20 @@ _fields:
 
 # ─────────── 後台選單 ───────────
 collections:
+  - name: home
+    label: 首頁文字
+    files:
+      - label: 首頁（中文）
+        name: home_zh
+        file: content/zh/home.json
+        fields: &home_fields
+          - {label: 首頁大標題, name: h1, widget: text, hint: 首頁最上方的大字，可按 Enter 換行}
+          - {label: 首頁介紹文字, name: lead, widget: text, hint: 顯示在大標題下方的介紹}
+      - label: 首頁（英文）
+        name: home_en
+        file: content/en/home.json
+        fields: *home_fields
+
   - name: articles_zh
     label: 技術專欄（中文）
     label_singular: 文章

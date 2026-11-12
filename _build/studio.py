@@ -5,6 +5,7 @@ import io
 import json
 import re
 import webbrowser
+from datetime import datetime, timezone
 from http import HTTPStatus
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -226,9 +227,15 @@ class StudioHandler(SimpleHTTPRequestHandler):
             self.handle_action(urlsplit(self.path).path, payload)
         except (ValueError, TypeError) as error:
             self.json({"error": str(error)}, HTTPStatus.BAD_REQUEST)
+        except OSError:
+            self.json({"error": "無法讀取或儲存本機草稿，請確認資料夾可寫入後再重試。"}, HTTPStatus.INTERNAL_SERVER_ERROR)
 
     def handle_action(self, path, payload):
         data = payload.get("data")
+        if path == "/api/check":
+            validate(data, complete=True)
+            self.json({"valid": True})
+            return
         if path == "/api/preview":
             validate(data)
             lang = payload.get("lang")
@@ -259,9 +266,9 @@ class StudioHandler(SimpleHTTPRequestHandler):
             return
         if path == "/api/save":
             validate(data)
-            draft = {"baseline": baseline, "data": data}
+            draft = {"baseline": baseline, "data": data, "saved_at": datetime.now(timezone.utc).isoformat()}
             save_draft(draft)
-            self.json({"revision": version(draft)})
+            self.json({"revision": version(draft), "saved_at": draft["saved_at"]})
         else:
             if not draft or data != draft["data"]:
                 raise ValueError("請先儲存目前的草稿。")
