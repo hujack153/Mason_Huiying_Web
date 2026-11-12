@@ -9,6 +9,9 @@
 * { box-sizing: border-box; }
 body { margin: 0; }
 body { line-height: 1.6; }
+a { color: var(--green); text-underline-offset: 3px; }
+.mast a { font-size: .9rem; }
+#deployment-status a { margin-left: .6rem; }
 [hidden] { display: none !important; }
 button, input, textarea, select { font: inherit; }
 button, select, input, textarea {

@@ -475,6 +475,8 @@ def copy_static():
         shutil.copytree(os.path.join(ROOT, name), os.path.join(OUT, name))
     for name in ("favicon.ico", "site.webmanifest", "_headers"):
         shutil.copy2(os.path.join(ROOT, "static", name), os.path.join(OUT, name))
+    from studio_assets import build_studio
+    build_studio(OUT)
 
 
 if __name__ == "__main__":

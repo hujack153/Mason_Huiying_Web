@@ -19,6 +19,9 @@ let reviewReady = false;
 let lastTextEdit = null;
 const history = [];
 const languageNames = {zh: "中文", en: "英文"};
+const online = /^\/admin(?:\/|$)/.test(location.pathname);
+const apiRoot = online ? "/admin/api/" : "/api/";
+let deploymentTimer;
 
 function status(message, error = false) {
   byId("status").textContent = message;
@@ -45,7 +48,7 @@ function markChanged() {
   status(dirty ? "修改中，將自動儲存…" : "所有修改已儲存。");
   clearTimeout(saveTimer);
   if (dirty && !saveBlocked && !stale()) {
-    saveTimer = setTimeout(() => saveDraft().catch(saveError), 800);
+    saveTimer = setTimeout(() => saveDraft().catch(saveError), online ? 1600 : 800);
   }
   controls();
 }
@@ -93,18 +96,20 @@ function saveDraft() {
 }
 
 async function request(action, payload) {
-  const response = await fetch("/api/" + action, payload === undefined ? {} : {
+  const response = await fetch(apiRoot + action, payload === undefined ? {} : {
     method: "POST",
     headers: {"Content-Type": "application/json"},
     body: JSON.stringify(payload),
   });
   if (!response.ok) {
+    if (online && response.status === 401) byId("login-reminder").hidden = false;
     let message = "操作未完成，請確認工作台的啟動視窗仍開著，再試一次。";
     try { message = (await response.json()).error || message; } catch {}
     const error = new Error(message);
     error.conflict = response.status === 409;
     throw error;
   }
+  if (online) byId("login-reminder").hidden = true;
   return response;
 }
 
@@ -537,7 +542,31 @@ byId("reset").addEventListener("click", () => {
   });
 });
 
-byId("export").addEventListener("click", () => action("export", async response => {
+byId("export").addEventListener("click", () => action(online ? "publish" : "export", async response => {
+  if (online) {
+    const published = await response.json();
+    try { localStorage.setItem("huiying-pending-publication", JSON.stringify(published)); } catch {}
+    byId("review-dialog").close();
+    trackDeployment(published);
+    saveBlocked = true;
+    try {
+      state = await (await request("state")).json();
+    } catch {
+      byId("recovery").hidden = false;
+      throw new Error("發布已提交，請重新載入後台以取得最新內容。");
+    }
+    data = structuredClone(state.draft?.data || state.source);
+    dirty = false;
+    history.length = 0;
+    saveBlocked = false;
+    reviewReady = false;
+    renderProducts();
+    refreshHome();
+    if (!byId("catalog-preview-panel").hidden) refreshCatalog();
+    status("發布已送出，正在確認網站更新。");
+    if (stale()) byId("recovery").hidden = false;
+    return;
+  }
   const url = URL.createObjectURL(await response.blob());
   const link = document.createElement("a");
   link.href = url;
@@ -647,7 +676,7 @@ byId("review").addEventListener("click", async () => {
     if (!issues.length) {
       try {
         await request("check", {data});
-        panel.textContent = "必填內容已填齊，可以下載送審檔。";
+        panel.textContent = online ? "必填內容已填齊，可以發布到網站。" : "必填內容已填齊，可以下載送審檔。";
         reviewReady = true;
       } catch (error) {
         panel.textContent = error.message;
@@ -675,8 +704,45 @@ byId("backup").addEventListener("click", () => {
 });
 byId("reload").addEventListener("click", () => location.reload());
 
+function trackDeployment(published, attempt = 0) {
+  clearTimeout(deploymentTimer);
+  const panel = byId("deployment-status");
+  panel.hidden = false;
+  panel.textContent = "發布已提交，網站正在建置更新，請稍候…";
+  request("deployment").then(response => response.json()).then(deployed => {
+    if (deployed.baseline === published.baseline) {
+      try { localStorage.removeItem("huiying-pending-publication"); } catch {}
+      panel.replaceChildren("網站已更新。");
+      const link = document.createElement("a");
+      link.href = "/";
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent = "開啟網站查看";
+      panel.append(link);
+    } else if (attempt < 59) {
+      deploymentTimer = setTimeout(() => trackDeployment(published, attempt + 1), 5000);
+    } else {
+      panel.replaceChildren("網站尚未完成這次更新，請稍後再確認，或聯絡維護人員檢查建置結果。");
+      panel.append(button("重新確認", () => trackDeployment(published)));
+    }
+  }).catch(() => {
+    panel.replaceChildren("暫時無法確認網站更新進度。");
+    panel.append(button("重新確認", () => trackDeployment(published)));
+  });
+}
+
 async function start() {
   try {
+    if (online) {
+      byId("storage-description").textContent = "修改文字或管理產品，草稿會自動儲存。確認預覽後即可發布。";
+      byId("publish-step").textContent = "發布到網站";
+      byId("review").textContent = "檢查修改並發布";
+      byId("review-description").textContent = "請確認這次的修改與預覽，按下發布後，網站會開始更新。";
+      byId("export").textContent = "確認發布到網站";
+      byId("footer-description").textContent = "草稿自動儲存於後台。按下發布後，網站更新進度會顯示在上方。";
+      byId("advanced-link").hidden = false;
+      byId("logout").hidden = false;
+    }
     state = await (await request("state")).json();
     data = structuredClone(state.draft?.data || state.source);
     controls();
@@ -684,8 +750,15 @@ async function start() {
     renderProducts();
     if (stale()) {
       byId("recovery").hidden = false;
-      status("內容已有新版本，請先備份目前草稿。", true);
+      status(state.draft?.unreadable ? "後台連線金鑰已更換或草稿無法讀取，請捨棄舊草稿後重新編輯。" :
+        "內容已有新版本，請先備份目前草稿。", true);
     } else status(state.draft ? "已載入上次儲存的草稿，繼續編輯即可。" : "已載入來源內容。修改後會自動儲存草稿。");
+    if (online) {
+      try {
+        const pending = JSON.parse(localStorage.getItem("huiying-pending-publication"));
+        if (pending?.baseline) trackDeployment(pending);
+      } catch {}
+    }
   } catch (error) {
     status(error.message, true);
   }

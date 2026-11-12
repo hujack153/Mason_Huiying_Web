@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>暉盈官網編輯工作台</title>
-  <link rel="stylesheet" href="/studio.css">
-  <script src="/studio.js" defer></script>
+  <link rel="stylesheet" href="./studio.css">
+  <script src="./studio.js" defer></script>
 </head>
 <body>
   <header class="mast">
@@ -15,6 +15,8 @@
       <h1>網站編輯工作台</h1>
     </div>
     <div class="actions">
+      <a id="advanced-link" href="/admin/classic.html" hidden>其他內容管理</a>
+      <form id="logout" action="/admin/logout" method="post" hidden><button type="submit">登出</button></form>
       <button id="undo" type="button" disabled>復原上一步</button>
       <button id="save" type="button" disabled>立即儲存</button>
       <button id="review" type="button" class="primary" disabled>檢查修改並送審</button>
@@ -22,8 +24,8 @@
   </header>
   <main>
     <section class="welcome" aria-label="操作說明">
-      <div><strong>今天想調整哪裡？</strong><p>修改文字或管理產品，草稿會自動儲存在這台電腦。</p></div>
-      <ol class="steps"><li>修改內容</li><li>預覽與檢查</li><li>交給維護人員發布</li></ol>
+      <div><strong>今天想調整哪裡？</strong><p id="storage-description">修改文字或管理產品，草稿會自動儲存在這台電腦。</p></div>
+      <ol class="steps"><li>修改內容</li><li>預覽與檢查</li><li id="publish-step">交給維護人員發布</li></ol>
     </section>
     <div class="save-bar">
       <span class="status" id="status" role="status">正在載入內容…</span>
@@ -36,6 +38,8 @@
         <button id="reload" type="button">重新載入</button>
       </div>
     </div>
+    <div id="login-reminder" class="notice" hidden><p>登入已逾時。<a href="/admin/login" target="_blank" rel="noopener">在新視窗重新登入</a>，回到這裡按「立即儲存」即可繼續。</p></div>
+    <div id="deployment-status" class="notice" role="status" hidden></div>
     <nav aria-label="工作區" class="tabs">
       <button id="page-tab" type="button" aria-pressed="true" aria-controls="page-workspace">修改首頁文字</button>
       <button id="catalog-tab" type="button" aria-pressed="false" aria-controls="catalog-workspace">管理防水產品</button>
@@ -96,7 +100,7 @@
     </section>
   </main>
   <footer class="workspace-footer">
-    <p>草稿儲存在這台電腦。檢查完成後，可下載送審檔交給網站維護人員。</p>
+    <p id="footer-description">草稿儲存在這台電腦。檢查完成後，可下載送審檔交給網站維護人員。</p>
     <button id="reset" type="button" disabled>捨棄全部草稿修改</button>
   </footer>
   <dialog id="product-dialog" aria-labelledby="product-heading">
@@ -116,7 +120,7 @@
   </dialog>
   <dialog id="review-dialog" aria-labelledby="review-heading">
     <div class="bar"><h2 id="review-heading">確認這次的修改</h2><button id="close-review" type="button">繼續編輯</button></div>
-    <p>請確認修改內容與預覽，再下載送審檔交給維護人員發布。</p>
+    <p id="review-description">請確認修改內容與預覽，再下載送審檔交給維護人員發布。</p>
     <ul id="change-summary" class="summary-list"></ul>
     <h3>內容檢查</h3>
     <div id="review-issues" role="status"></div>

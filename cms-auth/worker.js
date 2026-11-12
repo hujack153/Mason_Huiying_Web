@@ -12,12 +12,22 @@
  *                   預覽網址可加 *.workers.dev，例如 https://huiyingmaterials.com,*.workers.dev
  */
 
+import { handleStudio } from "./studio.js";
+
 const MAX_TRIES = 5;          // 同一個 IP 連續輸錯幾次後暫時鎖住
 const LOCK_SECONDS = 15 * 60; // 鎖住多久
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    let path = url.pathname;
+    try {
+      for (let i = 0; i < 3 && path.includes("%"); i++) path = decodeURIComponent(path);
+    } catch { return new Response("Invalid URL", {status: 400}); }
+    url.pathname = path.replace(/\/{2,}/g, "/");
+    if (url.pathname === "/admin" || url.pathname.startsWith("/admin/")) {
+      return handleStudio(new Request(url, request), env, {html, loginPage, isLocked, safeEqual, recordFail, clearFails});
+    }
     if (url.pathname === "/auth" || url.pathname === "/callback") {
       if (request.method === "POST") return handleLogin(request, env);
       return html(loginPage(""));
