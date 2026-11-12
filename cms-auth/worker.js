@@ -91,7 +91,8 @@ function html(body, status = 200) {
       "Content-Type": "text/html; charset=utf-8",
       "Cache-Control": "no-store",
       "X-Robots-Tag": "noindex, nofollow",
-      "Referrer-Policy": "no-referrer",
+      // Form POSTs need their same-origin Origin header for the login CSRF check.
+      "Referrer-Policy": "same-origin",
     },
   });
 }

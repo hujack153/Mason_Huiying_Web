@@ -125,7 +125,20 @@ test("online login protects studio, encoded paths and API without exposing crede
       assert.equal(result.headers.get("Location"), "/admin/login");
     }
     assert.equal((await app.request("/admin/api/state")).status, 401);
-    assert((await (await app.request("/admin/login")).text()).includes('content="online-v1"'));
+    const login = await app.request("/admin/login");
+    assert.equal(login.headers.get("Referrer-Policy"), "same-origin",
+      "Login form privacy policy must preserve Origin on same-origin POSTs");
+    assert((await login.text()).includes('content="online-v1"'));
+    const crossOriginLogin = await worker.fetch(new Request(origin + "/admin/login", {
+      method: "POST", headers: {Origin: "https://evil.example", "Content-Type": "application/x-www-form-urlencoded"},
+      body: "password=test-password",
+    }), app.env);
+    assert.equal(crossOriginLogin.status, 403);
+    const opaqueOriginLogin = await worker.fetch(new Request(origin + "/admin/login", {
+      method: "POST", headers: {Origin: "null", "Content-Type": "application/x-www-form-urlencoded"},
+      body: "password=test-password",
+    }), app.env);
+    assert.equal(opaqueOriginLogin.status, 403);
     await app.login();
     const state = await (await app.request("/admin/api/state")).json();
     assert.equal(state.baseline, await fingerprint(original));
